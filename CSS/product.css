@@ -6,16 +6,15 @@
     header{
         border-bottom: 1px solid #c2c1c1;
     }
-    nav a {
+    .header__items--list a{
         text-decoration: none;
         font-weight: 500;
         line-height: 19px;
         color: #333;
         font-size: 16px;
-
     }
-
-    a:hover {
+    
+    .header__items--list a:hover {
         color: rgb(85, 85, 223);
     }
 
