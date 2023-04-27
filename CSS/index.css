@@ -16,7 +16,8 @@ body {
 }
 
 .header--menu {
-    border: 0.5px solid #E5E5E5;
+    border-top: 0.5px solid #E5E5E5;
+    border-bottom: 0.5px solid #E5E5E5;
 }
 .header__navbar {
     width: 100%;
@@ -28,6 +29,8 @@ body {
 
 .navbar-brand {
     margin-right: 70px;
+    height: 65px;
+    width: 65px;
 }
 
 .navbar__icon {
@@ -73,6 +76,9 @@ body {
     margin: 30px auto 35px auto;
     grid-gap: 17px;
     max-width: 1200px;
+}
+.service--layout img {
+    width: 100%;
 }
 .service--layout:first-child {
     grid-row: 1/4;
