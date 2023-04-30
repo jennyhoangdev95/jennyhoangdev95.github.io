@@ -94,19 +94,19 @@ $(document).ready(function(){
       })
   });
 
+$(document).ready(function(){
+  $(".tab-content").hide();
+  $(".tab-content:first-child").fadeIn();
+  $(".allProduct__tabs li").click(function(){
+    $(".allProduct__tabs li").removeClass("all-product__active");
+    $(this).addClass("all-product__active");
 
-
-  
-  const tabs = $$('.tab-Item')
-  const tabContent = $$('.tab-content')
-  
-  tabs.forEach((tab, index) => {
-    tab.onclick = function () {
-      this.classList.add('active')
-    }
-  })
-    
-    
+    let id_Tab_Content = $(this).children("a").attr("href");
+    $(".tab-content").hide();
+    $(id_Tab_Content).fadeIn();
+    return false;
+  });
+});
 
 
 

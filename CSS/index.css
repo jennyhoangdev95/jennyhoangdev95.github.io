@@ -249,6 +249,7 @@ li {
 }
 .sale__card-slider {
     margin: 0;
+    width: 268px;
 }
 .sale__card-slider--img {
     position: relative;
@@ -256,6 +257,7 @@ li {
     margin-bottom: 15px;
     border: 1px solid #F2F2F2;
     border-radius: 3px;
+    width: 268px;
 }
 .sale__card-slider--a {
     width: 239px;
@@ -386,13 +388,12 @@ li {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-bottom: 35px;
+    padding-bottom: 30px;
     background-image: url(//bizweb.dktcdn.net/100/459/658/themes/870139/assets/background_title3.png?1664955292457);
     background-repeat: no-repeat;
     background-position: top;
     padding-top: 15px;
     height: auto;
-    margin-bottom: 10px;
 }
 .all-title h2 a {
     font-weight: 900;
@@ -400,7 +401,7 @@ li {
     line-height: 29px;
     color: #225A21;
 }
-.tab-Item {
+.allProduct__tabs a {
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
@@ -408,7 +409,8 @@ li {
     color: #2E747E;
     cursor: pointer;
 }
-.tab-Item a:hover {
+
+.allProduct__tabs a:hover {
     color: rgb(85, 85, 223);
 }
 .allProduct__tabs {
@@ -416,21 +418,40 @@ li {
     flex-direction: row;
     gap: 20px;
     position: relative;
+    padding: 0;
 }
-.allProduct__tabs .line {
+.allProduct__tabs::after {
+    content: "";
     position: absolute;
+    bottom: -5px;
     left: 0;
-    bottom: 0;
-    width: 0;
-    height: 6px;
-    border-radius: 15px;
-    background-color: #225A21;
-    transition: all 0.2s ease;
+    height: 2px;
+    width: 100%;
+    background: transparent;
+}
+.all-product__active {
+    position: relative;
+}
+.all-product__active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #2E747E;
+}
+.kdd > img {
+    width: 268px;
 }
 .tab-content {
     display: flex;
-    gap: 30px;
     flex-wrap: wrap;
-    
+    justify-content: space-between;
+    max-width: 1200px;
+    margin-bottom: 30px;
+}
+.margin-card {
+    margin-bottom: 30px;
 }
 
