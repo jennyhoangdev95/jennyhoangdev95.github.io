@@ -67,12 +67,14 @@ header {
 .main__body--contents {
     margin-top: 25px;
 }
-
-.colection--toolbar {
-    height: 58px;
-    line-height: 58px;
+.main__body--contents-top{
+    height: 45px;
+    line-height: 45px;
     margin-bottom: 40px;
     background: #F7F7F7;
+}
+.colection--toolbar {
+    
 }
 
 .category_collection--items .dropdown-toggle{
@@ -81,4 +83,20 @@ header {
     text-transform: uppercase;
     line-height: 25px;
     font-size: 14px;
+}
+/* .category_collection--items .dropdown-menu{
+    margin-left: 20px;
+
+} */
+
+.colection--sort-by .dropdown-toggle{
+    background: white;
+    color: #333;
+    border-radius: 3px;
+    border: 1px solid #e5e5e5;
+    width: 180px;
+    padding: 0 20px;
+    height: 36px;
+    outline: none;
+    text-align: start;
 }
