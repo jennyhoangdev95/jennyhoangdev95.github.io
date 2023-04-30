@@ -73,8 +73,8 @@ header {
     margin-bottom: 40px;
     background: #F7F7F7;
 }
-.colection--toolbar {
-    
+.colection--toolbar .dropdown-menu{
+    background: #F7F7F7;;
 }
 
 .category_collection--items .dropdown-toggle{
@@ -99,4 +99,7 @@ header {
     height: 36px;
     outline: none;
     text-align: start;
+}
+.colection--sort-by ul.dropdown-menu li {
+    line-height: 19px;
 }
