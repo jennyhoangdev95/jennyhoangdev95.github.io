@@ -400,12 +400,13 @@ li {
     line-height: 29px;
     color: #225A21;
 }
-.tab-Item a {
+.tab-Item {
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
     line-height: 22px;
     color: #2E747E;
+    cursor: pointer;
 }
 .tab-Item a:hover {
     color: rgb(85, 85, 223);
@@ -426,9 +427,10 @@ li {
     background-color: #225A21;
     transition: all 0.2s ease;
 }
-.tabs-content {
+.tab-content {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
     
 }
 

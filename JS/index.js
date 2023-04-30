@@ -16,7 +16,7 @@ $(document).ready(function(){
 
     const CardProduct = document.getElementById("#new-product__card")
 
-     const newProductdata = [
+    const newProductdata = [
         {
             id: 1,
             srcImg: "https://bizweb.dktcdn.net/thumb/large/100/459/658/products/4-jpeg-8f345d84-332c-423c-a8cb-6b2a997b0c49.jpg?v=1658809804000",
@@ -94,6 +94,18 @@ $(document).ready(function(){
       })
   });
 
+
+
+  
+  const tabs = $$('.tab-Item')
+  const tabContent = $$('.tab-content')
+  
+  tabs.forEach((tab, index) => {
+    tab.onclick = function () {
+      this.classList.add('active')
+    }
+  })
+    
     
 
 
