@@ -95,7 +95,7 @@
     <div class="bodywrap">
         <div class="main__body">
             <!-- Breadcrumb -->
-            <div class="main__body--breadcrumb">
+            <section class="main__body--breadcrumb">
                 <div class="container">
                     <ul class="breadcrumb">
                         <li class="home mx-2">
@@ -105,82 +105,86 @@
                         <li class="mx-2"><span> Tất cả sản phẩm</span></li>
                     </ul>
                 </div>
-            </div>
-            <div class="main__body--contents">
-                <!-- Header contents -->
-                <div class="main__body--contents-top container d-flex align-items-center justify-content-between">
-                    <div class="colection--category">
-                        <nav class="category_collection--items">
-                            <ul class="header__items--list nav d-flex justify-content-start align-items-center">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                                    aria-expanded="false">DANH MỤC SẢN PHẨM</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Trang chủ</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Giới thiệu</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Sản phẩm</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Liên hệ</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Tin tức</a></li>
-                                </ul>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="colection--sort-by">
-                        <div class="dropdown">
-                            <span> Sắp xếp: </span>
-                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Mặc định
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">A <i class="fa-solid fa-arrow-right"></i> Z</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Z <i class="fa-solid fa-arrow-right"></i> A</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Giá tăng dần</a></li>
-                                <li><a class="dropdown-item" href="#">Giá giảm dần</a></li>
-                                <li><a class="dropdown-item" href="#">Hàng mới nhất</a></li>
-                                <li><a class="dropdown-item" href="#">Hàng cũ nhất</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="main__body--contents-products container">
-                    <div class="row">
-                        <!-- Products -->
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <div class="product--thumnail">
-                                <a class="image_thumb scale_hover" href="#" title="Sữa tắm Dove" style="height: 228px;">
-                                    <img class="lazyload loaded"
-                                        src="//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-da5efbe5-c9c6-46e3-a19b-c66b5c566971.jpg?v=1657707796000"
-                                        data-src="//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-da5efbe5-c9c6-46e3-a19b-c66b5c566971.jpg?v=1657707796000"
-                                        alt="Sữa tắm Dove" data-was-processed="true" style="object-fit: fill;">
-                                </a>
-                                <div class="action">
-                                    <button class="btn-proceed-checkout">Mua ngay</button>
-                                    <button class="btn-cart"><i class="fa-solid fa-bag-shopping"
-                                            style="scale:1.8 ;"></i></button>
+            </section>
+            <section class="main__body--contents">
+                    <div class="container">
+                        <!-- Header contents -->
+                        <div class="main__body--contents-top d-flex align-items-center justify-content-between">
+                            <div class="colection--category">
+                                <nav class="category_collection--items">
+                                    <ul class="header__items--list nav d-flex justify-content-start align-items-center">
+                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                            aria-expanded="false">DANH MỤC SẢN PHẨM</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Trang chủ</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Giới thiệu</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Sản phẩm</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Liên hệ</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Tin tức</a></li>
+                                        </ul>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="colection--sort-by">
+                                <div class="dropdown">
+                                    <span> Sắp xếp: </span>
+                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Mặc định
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">A <i class="fa-solid fa-arrow-right"></i> Z</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Z <i class="fa-solid fa-arrow-right"></i> A</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Giá tăng dần</a></li>
+                                        <li><a class="dropdown-item" href="#">Giá giảm dần</a></li>
+                                        <li><a class="dropdown-item" href="#">Hàng mới nhất</a></li>
+                                        <li><a class="dropdown-item" href="#">Hàng cũ nhất</a></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="product--information">
-                                <h3 class="product-name"><a href="#" title="Sữa tắm Dove">Sữa tắm Dove</a></h3>
-                                <div class="price-box"> <strong>150.000₫</strong></div>
+                        </div>
+                        <div class="main__body--contents-products">
+                            <div class="row" id="productCard">
+                                <!-- Products -->
+                                <!-- <div class="col-lg-3 col-md-4 col-6">
+                                    <div class="product--thumnail">
+                                        <a class="image_thumb scale_hover" href="#" title="Sữa tắm Dove" style="height: 272px;">
+                                            <img class="lazyload loaded"
+                                                src="//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-da5efbe5-c9c6-46e3-a19b-c66b5c566971.jpg?v=1657707796000"
+                                                data-src="//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-da5efbe5-c9c6-46e3-a19b-c66b5c566971.jpg?v=1657707796000"
+                                                alt="Sữa tắm Dove" data-was-processed="true" style="object-fit: fill;">
+                                        </a>
+                                        <div class="action">
+                                            <button class="btn-proceed-checkout">Mua ngay</button>
+                                            <button class="btn-cart"><i class="fa-solid fa-bag-shopping"
+                                                    style="scale:1.8 ;"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product--information">
+                                        <h3 class="product-name"><a href="#" title="Sữa tắm Dove">Sữa tắm Dove</a></h3>
+                                        <div class="price-box"> <strong>150.000₫</strong></div>
+                                    </div>
+                                </div> -->
+                                <!-- Scrips Products -->
+                                <script src="../JS/product.js"></script>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+            </section>
         </div>
     </div>
     </div>
