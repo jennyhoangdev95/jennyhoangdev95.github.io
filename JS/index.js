@@ -91,7 +91,7 @@ $(document).ready(function(){
           "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
           nextArrow:
           "<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>"
-      })
+      });
   });
 
 $(document).ready(function(){
@@ -109,4 +109,16 @@ $(document).ready(function(){
 });
 
 
+$(document).ready(function(){
+  $(".block-blog").slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplaySpeed: 1000,
+      prevArrow:
+      "<button type='button' class='slick-prev blog-left pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+      nextArrow:
+      "<button type='button' class='slick-next blog-right pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>"
+  })
+});
 
