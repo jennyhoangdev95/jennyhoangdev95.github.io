@@ -123,7 +123,7 @@ li {
 .dropdown__list1:before {
     content: "";
     background-color: transparent;
-    height: 50px;
+    height: 30px;
     position:absolute;
     top: -25px;
     left: 0;
@@ -149,17 +149,6 @@ li {
 }
 .dropdown__select1:hover .dropdown__list2 {
     display: block;
-}
-
-.dropdown__select1:before {
-    content: "";
-    background-color: transparent;
-    height: 20px;
-    position:absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    cursor: pointer;
 }
 .container__home {
     display: grid;
@@ -241,7 +230,7 @@ li {
 .sale {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    gap: 22px;
 }
 .sale-card {
     display: flex;
@@ -272,6 +261,9 @@ li {
     height: 36px;
     z-index: 2;
     background: transparent;
+    position: absolute;
+    top: calc(( 100% - 56px ) / 2);
+    transform: translate(0, -50%);
 }
 .slick-arrow:hover {
     background: #ffb9a4;
@@ -281,15 +273,15 @@ li {
 }
 
 .slick-prev {
-    position: absolute;
+    /* position: absolute;
     top: 38%;
-    transform: translate(0,-50%);
+    transform: translate(0,-50%); */
     left: 0;
 }
 .slick-next {
-    position: absolute;
-    top: 38%;
-    transform: translate(-40%,-50%);
+    /* position: absolute;
+    top: 
+    transform: translate(0,-50%); */
     right: 0;
 }
 .card-slider--img {
