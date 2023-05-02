@@ -227,10 +227,13 @@ li {
 .product-sale {
     margin-bottom: 45px;
 }
+.product-sale__banner img {
+    width: 584px;
+}
 .sale {
     display: flex;
     justify-content: space-between;
-    gap: 22px;
+    gap: 16px;
 }
 .sale-card {
     display: flex;
@@ -273,15 +276,9 @@ li {
 }
 
 .slick-prev {
-    /* position: absolute;
-    top: 38%;
-    transform: translate(0,-50%); */
     left: 0;
 }
 .slick-next {
-    /* position: absolute;
-    top: 
-    transform: translate(0,-50%); */
     right: 0;
 }
 .card-slider--img {
