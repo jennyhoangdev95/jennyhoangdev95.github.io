@@ -19,17 +19,21 @@ a:hover {
 li {
     list-style: none;
 }
+.btn:hover {
+    border: 1px solid #ffb9a4;
+}
 .container {
     max-width: 1200px;
     padding: 0;
 }
 
-.header--menu {
+header {
     border-top: 0.5px solid #E5E5E5;
     border-bottom: 0.5px solid #E5E5E5;
+    width: 10000px;
 }
 .header__navbar {
-    width: 100%;
+    width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -526,4 +530,16 @@ li {
     position: absolute;
     left: -2px;
     top: 28%;
+}
+.mail   {
+    padding: 22px 0;
+    background: #FFECE1;
+    width: 10000px;
+}
+.mail-row {
+    display: flex;
+    justify-content: space-between;
+}
+.link-social a {
+    margin: 0 12px;
 }
