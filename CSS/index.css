@@ -535,6 +535,7 @@ header {
     padding: 22px 0;
     background: #FFECE1;
     width: 10000px;
+    height: 82px;
 }
 .mail-row {
     display: flex;
@@ -542,4 +543,29 @@ header {
 }
 .link-social a {
     margin: 0 12px;
+}
+.mail-text svg {
+    margin-right: 10px;
+}
+.mail-text span {
+    font-size: 16px;
+    color: #333;
+    line-height: 20px;
+    font-weight: 700;
+}
+.newletter-form {
+    display: flex;
+}
+.email-btn {
+    margin: 0;
+    border-radius: 0;
+    width: 100px;
+}
+.email-btn:hover {
+    background: white;
+}
+.email__input {
+    width: 365px;
+    padding: 0 55px 0 10px;
+    border: none;
 }
