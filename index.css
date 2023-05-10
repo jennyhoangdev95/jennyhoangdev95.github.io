@@ -569,3 +569,32 @@ header {
     padding: 0 55px 0 10px;
     border: none;
 }
+
+footer {
+    width: 1200px;
+}
+.info-footer    {
+    display: flex;
+    padding: 25px 0 55px 0;
+    justify-content: space-between;
+
+}
+.ft {
+    width: 277px;
+}
+.ft h4 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #A05139;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.ft-logo {
+    margin-bottom: 20px;
+}
+.ft-item {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
