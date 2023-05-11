@@ -110,7 +110,6 @@ header {
 .product--thumnail{
     position: relative;
     overflow: hidden;
-    margin-bottom: 15px;
     border: 1px solid #F2F2F2;
     border-radius: 3px;
 }
@@ -119,7 +118,11 @@ header {
     height: 100%;
 }
 .product--information{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0 25px 0;
 }
 .product--information h3{
     margin: 0;
