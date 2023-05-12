@@ -645,5 +645,5 @@ footer {
     line-height: 35px;
     font-weight: 600;
     background: #fff;
-    width: 10000px;
+    width: -webkit-fill-available;
 }
