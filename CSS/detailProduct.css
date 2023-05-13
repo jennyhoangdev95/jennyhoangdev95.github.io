@@ -22,3 +22,7 @@ body {
     color: black;
     
 }
+.product-img {
+        width:500px;
+        display:block;
+}
