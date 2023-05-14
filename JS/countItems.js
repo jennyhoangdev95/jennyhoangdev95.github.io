@@ -16,3 +16,16 @@ function addProduct() {
 }
 
 
+// let btns = document.querySelectorAll(".slider--button-icon")
+// for (let i = 0; i < btns.length; i++) {
+// let btn = btns[i]
+// btn.addEventListener("click", add)
+// }
+
+// function add(event) {
+// let id = event.target.dataset.id
+// let item = data.filter((element) => {
+// if (element.id === Number(id)) {
+// return element
+// }
+// })}
