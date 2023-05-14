@@ -101,7 +101,7 @@ $(document).ready(function(){
     $(".allProduct__tabs li").removeClass("all-product__active");
     $(this).addClass("all-product__active");
 
-    let id_Tab_Content = $(this).children("a").attr("href");
+    let id_Tab_Content = $(this).children("a,h3").attr("href");
     $(".tab-content").hide();
     $(id_Tab_Content).fadeIn();
     return false;
