@@ -1,7 +1,18 @@
 var countItem = 0
-document.getElementById("countItem").value = 0
 
-function addProduct(){
-    countItem ++
-    document.getElementById("countItem").value = countItem
+var list = document.getElementsByClassName('countItem');
+var n;
+for (n = 0; n < list.length; ++n) {
+    list[n].value = countItem;
 }
+
+function addProduct() {
+    countItem++
+    var list = document.getElementsByClassName('countItem');
+    var n;
+    for (n = 0; n < list.length; ++n) {
+        list[n].value = countItem;
+    }
+}
+
+
