@@ -644,15 +644,12 @@ footer {
     line-height: 35px;
     font-weight: 600;
     background: #fff;
-    width: -webkit-fill-available;
+    width: 10000px;
 }
-<<<<<<< HEAD
 .p-ft a, p.time {
     padding-left: 0;
 }
 
-
-=======
 /* back-top button */
 .backtop{
     position: fixed;
@@ -678,4 +675,4 @@ footer {
 .hide{
     display: none;
 }
->>>>>>> 12f1b52e45eb42821c38654c0c36eb80e9a3a9f7
+
