@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    border-top: 0.5px solid #E5E5E5;
+    border-bottom: 0.5px solid #E5E5E5;
+}
+
+.container {
+    max-width: 1200px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row{
+    max-width: 1200px;
+    margin: auto;
+}
+.header__items--list a {
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 19px;
+    color: #333;
+    font-size: 16px;
+}
+
+.header__items--list a:hover {
+    color: rgb(85, 85, 223);
+}
+
+.nav-item {
+    margin-right: 15px;
+}
+
+
+.header-menu .search-account {
+    padding: 0 15px;
+    cursor: pointer;
+    gap: 30px;
+}
+
+.navbar__icon--item {
+    position: relative;
+}
+
+.navbar__icon--count-item {
+    width: 18px;
+    height: 15px;
+    text-align: center;
+    line-height: 12px;
+    position: absolute;
+    top: 13px;
+    left: 6px;
+    color: #fff;
+    border-radius: 6px;
+    background: #A05139;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+/* body */
+.title-page{
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #343434;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #777777;
+}
+
+.main__body--contents {
+    margin-top: 40px;
+}
+
+.main__body--contents-top {
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 40px;
+    padding: 0px 20px;
+    background: none;
+}
+.list-blogs .item-blog {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    width: auto !important;
+}
+
+.item-blog .blog-thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blog-thumb .thumb {
+    display: block;
+    width: 100%;
+}
+.blog-thumb img{
+    width:100%;
+}
+.list-blogs .item-blog .blog-thumb {
+    margin-bottom: 15px;
+}
+
+.list-blogs .item-blog .blog-content .time-post {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #8C8C8C;
+    margin-bottom: 15px;
+}
+.list-blogs .item-blog .blog-content p {
+    word-break: break-word;
+    color: #777;
+}
