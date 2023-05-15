@@ -5,12 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sản phẩm</title>
+  <title>Giới thiệu</title>
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <!-- Font -->
-  <link rel="stylesheet" href="../CSS/product.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +18,7 @@
   <!-- Icon fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="../CSS/intro.css">
 </head>
 
 <body>
@@ -99,8 +99,7 @@
                     d="M17.5373 17.4929L16.6053 6.23836C16.5473 5.51328 15.9074 4.94527 15.1486 4.94527H13.3077V4.86598C13.3077 2.73426 11.498 1 9.27364 1C7.04924 1 5.23958 2.73426 5.23958 4.86598V4.94527H3.39869C2.63989 4.94527 1.99998 5.51324 1.94206 6.23684L1.00986 17.4944C0.937715 18.3958 1.26397 19.2932 1.90501 19.9564C2.54598 20.6196 3.45462 21 4.39803 21H14.1493C15.0926 21 16.0013 20.6196 16.6423 19.9564C17.2834 19.2932 17.6096 18.3958 17.5373 17.4929ZM6.46199 4.86598C6.46199 3.38023 7.7233 2.17148 9.27364 2.17148C10.824 2.17148 12.0853 3.38027 12.0853 4.86598V4.94527H6.46199V4.86598ZM15.7454 19.1604C15.329 19.5912 14.7621 19.8285 14.1493 19.8285H4.39803C3.78515 19.8285 3.21829 19.5912 2.80183 19.1603C2.38534 18.7295 2.18182 18.1696 2.22861 17.5855L3.16081 6.32797C3.17027 6.20953 3.27482 6.11676 3.39873 6.11676H5.23962V7.55953C5.23962 7.88301 5.51329 8.14527 5.85083 8.14527C6.18837 8.14527 6.46204 7.88301 6.46204 7.55953V6.11676H12.0854V7.55953C12.0854 7.88301 12.359 8.14527 12.6966 8.14527C13.0341 8.14527 13.3078 7.88301 13.3078 7.55953V6.11676H15.1486C15.2725 6.11676 15.377 6.20953 15.3867 6.32949L16.3187 17.584C16.3655 18.1696 16.1619 18.7294 15.7454 19.1604Z"
                     fill="#333333"></path>
                 </svg>
-                <!-- <input class="navbar__icon--count-item countItem"></input> -->
-                <input class="navbar__icon--count-item countItem" readonly></input>
+                <input class="navbar__icon--count-item" id="countItem"></input>
               </a>
             </div>
           </div>
@@ -116,108 +115,30 @@
           <a href="/"><span>Trang chủ</span></a>
         </li>
         <span><i class="fa-solid fa-angle-right"></i></span>
-        <li class="mx-2"><span> Tất cả sản phẩm</span></li>
+        <li class="mx-2"><span>Giới thiệu</span></li>
       </ul>
     </div>
   </section>
-  <section class="bodywrap">
-    <div class="main__body">
-      <div class="main__body--contents">
-        <div class="container">
-          <!-- Header contents -->
-          <div class="main__body--contents-top d-flex align-items-center justify-content-between">
-            <div class="colection--category">
-              <nav class="category_collection--items">
-                <ul class="header__items--list nav d-flex justify-content-start align-items-center">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                    aria-expanded="false">DANH MỤC SẢN PHẨM</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Trang chủ</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Giới thiệu</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Sản phẩm</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Liên hệ</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Tin tức</a></li>
-                  </ul>
-                </ul>
-              </nav>
-            </div>
-            <div class="colection--sort-by">
-              <div class="dropdown">
-                <span> Sắp xếp: </span>
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Mặc định
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">A <i class="fa-solid fa-arrow-right"></i> Z</a>
-                  </li>
-                  <li><a class="dropdown-item" href="#">Z <i class="fa-solid fa-arrow-right"></i> A</a>
-                  </li>
-                  <li><a class="dropdown-item" href="#">Giá tăng dần</a></li>
-                  <li><a class="dropdown-item" href="#">Giá giảm dần</a></li>
-                  <li><a class="dropdown-item" href="#">Hàng mới nhất</a></li>
-                  <li><a class="dropdown-item" href="#">Hàng cũ nhất</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="main__body--contents-products">
-            <div class="row" id="productCard">
-              <!-- Products -->
-              <!-- <div class="col-lg-3 col-md-4 col-6">
-                                    <div class="product--thumnail">
-                                        <a class="image_thumb scale_hover" href="#" title="Sữa tắm Dove" style="height: 272px;">
-                                            <img class="lazyload loaded"
-                                                src="//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-da5efbe5-c9c6-46e3-a19b-c66b5c566971.jpg?v=1657707796000"
-                                                data-src="//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-da5efbe5-c9c6-46e3-a19b-c66b5c566971.jpg?v=1657707796000"
-                                                alt="Sữa tắm Dove" data-was-processed="true" style="object-fit: fill;">
-                                        </a>
-                                        <div class="action">
-                                            <button class="btn-proceed-checkout">Mua ngay</button>
-                                            <button class="btn-cart"><i class="fa-solid fa-bag-shopping"
-                                                    style="scale:1.8 ;"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="product--information">
-                                        <h3 class="product-name"><a href="#" title="Sữa tắm Dove">Sữa tắm Dove</a></h3>
-                                        <div class="price-box"> <strong>150.000₫</strong></div>
-                                    </div>
-                                </div> -->
-              <!-- Scrips Products -->
-              <script src="../JS/product.js"></script>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pagenav ">
-      <nav aria-label="Page navigation">
-        <ul class="pagination">
-          <li class="page-item active mx-1"><a class="page-link" href="#">1</a></li>
-          <li class="page-item mx-1"><a class="page-link" href="#">2</a></li>
-          <li class="page-item mx-1"><a class="page-link" href="#">3</a></li>
-          <li class="page-item mx-1">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+  <section>
+    <p class="container">
+      HKT Cosmetic - Sản phẩm hiện có bán rộng khắp tại: Chuỗi CH Hasaki, Emart, Wellness AEON, Shop BeautyStation. Xem địa chỉ các shop gần nhất: INBOX ngay!Hàn Quốc nổi tiếng là quốc gia làm dậy sóng những trào lưu làm đẹp. Mỹ phẩm Hàn Quốc mang phong vị đặc trưng và cho phép phái đẹp lựa chọn một signature riêng độc đáo. Sứ mệnh của HKT Cosmetic là mang đến Phong Thái Riêng Cho Phái Đẹp - vốn bắt nguồn từ chính niềm tự hào với diện mạo đầy thần sắc và sự tự tin: biết điểm trang, chăm sóc & nuôi dưỡng vẻ đẹp mà tạo hóa đã ban tặng người Phụ Nữ. Là thương hiệu ra đời tại Hàn Quốc, HKT được thừa hưởng những tinh hoa từ công nghệ mỹ phẩm make up & skincare chỉ có thể tìm thấy tại xứ Kim Chi.
+    </p>
+    <p class="container">
+      Đến với Việt Nam, những sản phẩm của HKT Cosmetic Việt Nam đều là hàng chính hãng với chứng nhận công bố mỹ phẩm từ Bộ Y Tế, cam kết chất lượng, an toàn, uy tín với giá cả phải chăng.
+    </p> 
+    <p class="container">
+      HKT Cosmetic Việt Nam tin rằng, từng sản phẩm mà chúng tôi chọn sẽ chinh phục được phái đẹp Việt. Từng sản phẩm bạn chọn làm nên người phụ nữ quyến rũ trong bạn, không những cho bạn diện mạo xuất thần mà còn kiến tạo nên PHONG THÁI RIÊNG, DẤU ẤN riêng của bạn.
+    </p>   
+    <p class="container">
+      ========
+    </p>
+    <p class="container">
+      HKT Cosmetic
+    </p>
+    <p class="container">
+      Sản phẩm hiện có bán rộng khắp tại: Chuỗi CH Hasaki, Emart, Wellness AEON, Shop BeautyStation.
+    </p>
   </section>
-
   <footer>
     <div class="mail">
       <div class="container">
@@ -445,59 +366,10 @@
     </div>
   </footer>
 
-
   <!-- Scrips Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
-  <section class="popup--cart">
-    <div class="popup--cart__header">
-      <div class="popup-cart-top">
-        <span>
-          <svg aria-hidden="true" focusable="false" width="18" height="18" data-prefix="fal" data-icon="check-circle"
-            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-            class="svg-inline--fa fa-check-circle fa-w-16">
-            <path fill="currentColor"
-              d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"
-              class=""></path>
-          </svg>
-          Bạn đã thêm <input class="popup--count-item countItem" readonly></input> sản phẩm vào giỏ hàng
-        </span>
-      </div>
-      <div class="popup-cart-sumary">
-        <span>Giỏ hàng của bạn:</span>
-      </div>
-    </div>
-    <div class="popup--cart__container">
-      <div class="cart-header-info d-flex">
-        <div style="width: 50%; padding-left: 10px;">Thông tin sản phẩm</div>
-        <div style="width: 20%">Đơn giá</div>
-        <div style="width: 15%">Số lượng</div>
-        <div style="width: 15%">Thành tiền</div>
-      </div>
-      <div class="cart-bottom-checkout">
-        <div class="row">
-          <div class="col-lg-4 col-12 offset-md-8 offset-lg-8 offset-xl-8">
-            <div class="cart--subtotal d-flex">
-              <div>Tổng tiền: </div>
-              <div style="width: 50%; float: left;text-align: right;">asdasd</div>
-            </div>
-            <button onclick="location.href='/checkout'" type="button"
-              class="button btn btn-default cart__btn-proceed-checkout" id="btn-proceed-checkout"
-              title="Thanh toán">Thanh toán</button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- back top button -->
-  <div>
-    <a href="#" class="backtop hide show" title="Lên đầu trang"><i class="fa-solid fa-angle-up" style="scale: 1.2;"></i>
-    </a>
-  </div>
-
-  <script src="../JS/countItems.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,45 @@
 var countItem = 0
-document.getElementById("countItem").value = 0
 
-function addProduct(){
-    countItem ++
-    document.getElementById("countItem").value = countItem
+var list = document.getElementsByClassName('countItem');
+var n;
+for (n = 0; n < list.length; ++n) {
+    list[n].value = countItem;
 }
+
+function addProduct() {
+    countItem++
+    var list = document.getElementsByClassName('countItem');
+    var n;
+    for (n = 0; n < list.length; ++n) {
+        list[n].value = countItem;
+    }
+}
+
+
+// let btns = document.querySelectorAll(".slider--button-icon")
+// for (let i = 0; i < btns.length; i++) {
+// let btn = btns[i]
+// btn.addEventListener("click", add)
+// }
+
+// function add(event) {
+// let id = event.target.dataset.id
+// let item = data.filter((element) => {
+// if (element.id === Number(id)) {
+// return element
+// }
+// })}
+
+
+// scroll button
+
+const backToTopbtn = document.getElementsByClassName("backtop");
+window.addEventListener("scroll", () => {
+    for (let i = 0; i < backToTopbtn.length; i++) {
+        if (window.scrollY > 300) {
+            backToTopbtn[i].classList.remove("hide");
+        } else {
+            backToTopbtn[i].classList.add("hide");
+        }
+    }
+});

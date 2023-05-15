@@ -101,7 +101,6 @@ header {
     background: #F7F7F7;
     padding: 0px 20px;
     /* background-clip: content-box; */
-
 }
 
 .colection--category .dropdown-menu {
@@ -115,11 +114,6 @@ header {
     line-height: 25px;
     font-size: 14px;
 }
-
-/* .category_collection--items .dropdown-menu{
-    margin-left: 20px;
-
-} */
 
 .colection--sort-by .dropdown-toggle {
     background: white;
@@ -269,6 +263,17 @@ header {
     background: #ffb9a4;
     color: #fff;
 }
+.popup--count-item{
+    border: none;
+    width: 10px;
+    height: 16px;
+    text-align: center;
+    background: #ffb9a4;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    
+}
 .popup-cart-sumary{
     font-weight: 400;
     font-size: 16px;
@@ -298,4 +303,3 @@ header {
     border: 1px solid #ffb9a4;
     margin-top: 10px;
 }
-    
