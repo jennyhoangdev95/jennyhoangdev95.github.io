@@ -669,3 +669,6 @@ footer {
 .backtop:hover i{
     color: white;
 }
+.hide{
+    display: none;
+}

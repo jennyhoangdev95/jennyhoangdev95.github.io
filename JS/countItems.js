@@ -29,3 +29,17 @@ function addProduct() {
 // return element
 // }
 // })}
+
+
+// scroll button
+
+const backToTopbtn = document.getElementsByClassName("backtop");
+window.addEventListener("scroll", () => {
+    for (let i = 0; i < backToTopbtn.length; i++) {
+        if (window.scrollY > 300) {
+            backToTopbtn[i].classList.remove("hide");
+        } else {
+            backToTopbtn[i].classList.add("hide");
+        }
+    }
+});
