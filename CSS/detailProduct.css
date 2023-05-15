@@ -29,11 +29,11 @@ body {
 .main-imgPro {
     padding: 0px 15px 15px 15px;
 }
-.slick-track {
+div.imgPro {
     display: flex;
     align-items: flex-start;
 }
-.slick-slide {
+img.blockImg {
     margin: 0px 15px 0px 0px;
     padding: 1px;
     border: 1px solid #ebebeb;
@@ -133,7 +133,7 @@ body {
     width: 178px;
 }
 .policy-sale {
-    padding: 50px 0px;
+    padding-top: 50px;
     width: 100%;
 }
 .title-tabPro {
@@ -145,6 +145,7 @@ body {
 }
 .allProduct__tabs {
     cursor: pointer;
+    margin-bottom: 0px ;
 }
 .title-tabPro:hover {
     color: #A05139;
@@ -173,4 +174,31 @@ body {
     gap: 5px;
     position: relative;
     padding: 0;
+}
+.rte {
+    padding: 35px 0px;
+}
+.rte p {
+    margin: 0;
+}
+.DetailsProduct-title {
+    margin-bottom: 35px;
+}
+.DetailsProduct-title h2 a {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding: 10px 0px 5px 0;
+    color: #343434;
+    display: block;
+    margin-bottom: 8px;
+}
+.newProduct-card {
+    display: flex;
+    margin-bottom: 30px;
+}
+#detailsproduct__card {
+    width: 1200px;
 }

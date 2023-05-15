@@ -645,5 +645,10 @@ footer {
     line-height: 35px;
     font-weight: 600;
     background: #fff;
-    
+    width: -webkit-fill-available;
 }
+.p-ft a, p.time {
+    padding-left: 0;
+}
+
+
