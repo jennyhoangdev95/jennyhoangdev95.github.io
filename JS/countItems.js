@@ -1,38 +1,18 @@
-var countItem = 0
-
-var list = document.getElementsByClassName('countItem');
-var n;
-for (n = 0; n < list.length; ++n) {
-    list[n].value = countItem;
-}
-
+let cartCount = 0;
 function addProduct() {
-    countItem++
-    var list = document.getElementsByClassName('countItem');
-    var n;
-    for (n = 0; n < list.length; ++n) {
-        list[n].value = countItem;
-    }
+    cartCount++;
+    let countItems = document.querySelectorAll('.countItem');
+    countItems.forEach(function (countItem) {
+        countItem.textContent = cartCount;
+    });
 }
-
-
-// let btns = document.querySelectorAll(".slider--button-icon")
-// for (let i = 0; i < btns.length; i++) {
-// let btn = btns[i]
-// btn.addEventListener("click", add)
-// }
-
-// function add(event) {
-// let id = event.target.dataset.id
-// let item = data.filter((element) => {
-// if (element.id === Number(id)) {
-// return element
-// }
-// })}
-
+// add funtion  cho homepage
+let buttons = document.querySelectorAll('.slider--button-icon');
+buttons.forEach(function (button) {
+    button.addEventListener('click', addProduct);
+});
 
 // scroll button
-
 const backToTopbtn = document.getElementsByClassName("backtop");
 window.addEventListener("scroll", () => {
     for (let i = 0; i < backToTopbtn.length; i++) {
