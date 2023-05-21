@@ -240,20 +240,14 @@ header {
 }
 /* pop up cart css */
 .popup--cart{
+    background: white;
     width: 900px;
     height: 500px;
     max-height: 500px;
     margin: 0 auto;
-    position: relative;
-    border-radius: 4px;
-    /* position: fixed;
-    left: 50%;
-    top: 10%; */
-    /* display: none; */
-    /* transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1); */
-    /* box-shadow: none; */
-    /* touch-action: manipulation; */
-    /* z-index: -1; */
+    position: fixed;
+    top: 80px;
+    z-index: 2;
 }
 .popup-cart-top{
     font-size: 16px;
@@ -365,4 +359,22 @@ tbody tr td {
     display: flex;
     justify-content: space-between;
     margin-bottom: 12px;
+}
+
+.popup--background {
+    position: fixed;
+    opacity: 0;
+    width: 100%;
+    left: 0;
+    top: 0 !important;
+    right: 0;
+    bottom: 0;
+    background-color: #363636;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.popup--background.active {
+    opacity: 0.8;
+    visibility: visible;
 }

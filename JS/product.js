@@ -106,15 +106,15 @@ getCardEle.innerHTML = html
 
 
 let btns = document.querySelectorAll(".btn-cart")
-console.log('btn', btns)
 for (let i = 0; i < btns.length; i++) {
     let btn = btns[i]
     btn.addEventListener("click", add)
+    btn.addEventListener("click", checkout)
 }
 
 
 function add(event) {
-    let id = event.target.dataset.id
+    let id = event.target.closest('.btn-cart').dataset.id
     let item = mockData.filter((data) => {
         if (data.id === Number(id)) {
             return data
@@ -131,3 +131,31 @@ function setItemInLocal(name, value) {
     listItems.push(value)
     localStorage.setItem(name, JSON.stringify(listItems))
 };
+//Pop-up
+function checkout() {
+    let popUp = document.getElementById('popup--cart__id');
+    popUp.classList.remove("d-none");
+    let backGround = document.getElementById('background--popup');
+    backGround.classList.add("active");
+}
+
+
+// Working on
+
+function getItemInLocal(cname) {
+    const cvalue = localStorage.getItem(cname)
+    return cvalue ? JSON.parse(cvalue) : ""
+}
+// const products = getItemInLocal('products')
+
+// let containerOrderList = document.getElementById("order-list")
+// let arrayProducts = ""
+// products.forEach(element => {
+//     let html = `
+//   <li><img src='../${element.srcImg}'><h4>${element.title}</h4><h5>$${element.mainCost}</h5></li>
+//   `
+//     arrayProducts += html
+//     priceTotal += element.mainCost
+// });
+
+// containerOrderList.innerHTML = arrayProducts
