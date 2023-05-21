@@ -27,20 +27,20 @@ let render = (amount) => {
     amountElement.value = amount
 };
 // plus amount
-let plusAmountPro = () =>{
+let plusAmountPro = () => {
     amount++
-    render (amount);
+    render(amount);
 };
 // minus amount
 let minusAmountPro = () => {
-    if (amount>1)
-    amount--
-    render (amount);
+    if (amount > 1)
+        amount--
+    render(amount);
 };
 amountElement.addEventListener('input', () => {
     amount = amountElement.value;
     amount = parseInt(amount);
-    amount = isNaN(amount)?1:amount;
+    amount = isNaN(amount) ? 1 : amount;
     render(amount);
     console.log(amount)
 });
@@ -109,17 +109,17 @@ for (let index = 0; index < newProductdata.length; index++) {
             </div>   
         </div>
 `;
-html += card
+    html += card
 }
 CardProduct.innerHTML = html;
 
-$(document.getElementById('detailsproduct__card')).ready(function(){
+$(document.getElementById('detailsproduct__card')).ready(function () {
     $('#detailsproduct__card').slick({
         slidesToShow: 4,
-        slidesToScroll:1,
-      prevArrow:
-      "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-      nextArrow:
-      "<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+        slidesToScroll: 1,
+        prevArrow:
+            "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+        nextArrow:
+            "<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
     })
 })
