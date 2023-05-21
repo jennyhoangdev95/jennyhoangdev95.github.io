@@ -2,31 +2,31 @@ const getCardEle = document.getElementById("productCard")
 
 const mockData = [
     {
-        id: "1",
+        id: 1,
         title: "Sữa tắm Dove",
         price: "150.000₫",
         srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-da5efbe5-c9c6-46e3-a19b-c66b5c566971.jpg?v=1657707796000"
     },
     {
-        id: "2",
+        id: 2,
         title: "Sữa tắm Purité",
         price: "200.000₫",
         srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/5-jpeg-4298c8de-60bf-46ba-a1a4-78eb7df3e047.jpg?v=1657707688000"
     },
     {
-        id: "3",
+        id: 3,
         title: "Sữa tắm Pharmacity",
         price: "150.000₫",
         srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/2-jpeg-e4f13416-93d1-4d5c-b7a9-5ae454ef4d9d.jpg?v=1657707526000"
     },
     {
-        id: "4",
+        id: 4,
         title: "Sữa tắm ST.Ives",
         price: "110.000₫",
         srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-9c9951ce-445d-42c7-9d57-a9596ec97336.jpg?v=1657707111000"
     },
     {
-        id: "5",
+        id: 5,
         title: "Sữa tắm LOVE BEAUTY & PLANET",
         price: "150.000₫",
         srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/5-jpeg-40a9699c-5ca8-4231-8ff5-4d60e4917b72.jpg?v=1657707031000"
@@ -116,8 +116,7 @@ for (let i = 0; i < btns.length; i++) {
 function add(event) {
     let id = event.target.dataset.id
     let item = mockData.filter((data) => {
-        console.log('id', typeof id)
-        if (data.id == id) {
+        if (data.id === Number(id)) {
             return data
         }
     })
