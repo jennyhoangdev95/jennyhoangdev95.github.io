@@ -104,25 +104,23 @@ for (let index = 0; index < mockData.length; index++) {
 }
 getCardEle.innerHTML = html
 
-
+// set item local storage
 let btns = document.querySelectorAll(".btn-cart")
 for (let i = 0; i < btns.length; i++) {
     let btn = btns[i]
     btn.addEventListener("click", add)
     btn.addEventListener("click", checkout)
 }
-
-
 function add(event) {
     let id = event.target.closest('.btn-cart').dataset.id
-    let item = mockData.filter((data) => {
-        if (data.id === Number(id)) {
-            return data
+    let item = mockData.filter((element) => {
+        if (element.id === Number(id)) {
+            return element
         }
     })
     setItemInLocal('products', item[0])
-    // console.log
 }
+// cover data form local storage
 function setItemInLocal(name, value) {
     if (name == null) return
     const listItems = JSON.parse(
@@ -131,31 +129,77 @@ function setItemInLocal(name, value) {
     listItems.push(value)
     localStorage.setItem(name, JSON.stringify(listItems))
 };
-//Pop-up
+
+// //Pop-up
 function checkout() {
     let popUp = document.getElementById('popup--cart__id');
     popUp.classList.remove("d-none");
     let backGround = document.getElementById('background--popup');
     backGround.classList.add("active");
+
+    let popOut = document.getElementById('popOut');
+        popOut.addEventListener("click", popout);
+    function popout() {
+        let popout = document.getElementById('popup--cart__id');
+        popout.classList.add("d-none");
+        let backGround = document.getElementById('background--popup');
+        backGround.classList.remove("active");;
+    }
 }
 
-
-// Working on
+// get data from local
+const products = getItemInLocal('products')
+console.log(products)
 
 function getItemInLocal(cname) {
     const cvalue = localStorage.getItem(cname)
     return cvalue ? JSON.parse(cvalue) : ""
 }
-// const products = getItemInLocal('products')
 
-// let containerOrderList = document.getElementById("order-list")
-// let arrayProducts = ""
-// products.forEach(element => {
-//     let html = `
-//   <li><img src='../${element.srcImg}'><h4>${element.title}</h4><h5>$${element.mainCost}</h5></li>
-//   `
-//     arrayProducts += html
-//     priceTotal += element.mainCost
-// });
+let containerOrderList = document.getElementById("products--list")
 
-// containerOrderList.innerHTML = arrayProducts
+let arrayProducts = ""
+let priceTotal = 0
+products.forEach(element => {
+    let html2 = `
+    <div class=" product--details d-flex justify-content-center align-items-center">
+    <div class="namepro" style="width: 50%; display: flex; flex-direction: row; align-items: center;">
+    <img style="width: 80px; height: 80px;" src="${element.srcImg}" alt="${element.title}">
+        <div style="display: flex; flex-direction: column; justify-content: center; margin-left: 10px;">
+        <a style="text-align: left;">${element.title}</a>
+        <p style="color: red; text-align: left; margin: 0;">xoá</p>
+        </div>
+    </div>
+    <div style="text-align: center; width: 20%"><span>${element.price}</span></div>
+    <div style="text-align: center; width: 15%">
+        <div class="btn-amountPro">
+            <button class="btn-amountPro minus-btn" onclick="minusAmountPro()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="svg w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+                </svg>
+            </button>
+            <input type="text" name="amountPro" id="amountPro" value="1">
+            <button class="btn-amountPro plus-btn" onclick="plusAmountPro()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="svg w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div style="text-align: center; width: 15%"><span>${element.price}</span></div>
+    </div>
+    </div>
+`
+    arrayProducts += html2
+    priceTotal += parseFloat(element.price);
+});
+
+containerOrderList.innerHTML = arrayProducts;
+let containerPriceTotal = document.getElementById("price-total")
+if (priceTotal < 1000){
+    containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ"   
+} else {
+    containerPriceTotal.innerHTML = (priceTotal / 1000).toLocaleString() + "0.000đ"
+}

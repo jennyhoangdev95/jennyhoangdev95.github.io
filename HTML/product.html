@@ -175,7 +175,6 @@
           <!-- Product list -->
           <div class="main__body--contents-products">
             <div class="row" id="productCard">
-              <script src="../JS/product.js"></script>
             </div>
           </div>
         </div>
@@ -429,6 +428,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
+  <!-- popup -->
   <section class="popup--cart d-none" id="popup--cart__id">
     <div class="popup--cart__header">
       <div class="popup-cart-top">
@@ -443,8 +443,16 @@
           Bạn đã thêm <span class="popup--count-item countItem">0</span> sản phẩm vào giỏ hàng
         </span>
         <span>
-          <a href="./product.html">
-            <svg style="width: 15px; height: 15px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 365.696 365.696" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path xmlns="http://www.w3.org/2000/svg" d="m243.1875 182.859375 113.132812-113.132813c12.5-12.5 12.5-32.765624 0-45.246093l-15.082031-15.082031c-12.503906-12.503907-32.769531-12.503907-45.25 0l-113.128906 113.128906-113.132813-113.152344c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503907-12.5 32.769531 0 45.25l113.152344 113.152344-113.128906 113.128906c-12.503907 12.503907-12.503907 32.769531 0 45.25l15.082031 15.082031c12.5 12.5 32.765625 12.5 45.246093 0l113.132813-113.132812 113.128906 113.132812c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082031c12.5-12.503906 12.5-32.769531 0-45.25zm0 0" fill="#ffffff" data-original="#000000" class=""></path></g></svg>          
+          <a href="#" id="popOut">
+            <svg style="width: 15px; height: 15px;" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="512" height="512" x="0" y="0"
+              viewBox="0 0 365.696 365.696" style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+              <g>
+                <path xmlns="http://www.w3.org/2000/svg"
+                  d="m243.1875 182.859375 113.132812-113.132813c12.5-12.5 12.5-32.765624 0-45.246093l-15.082031-15.082031c-12.503906-12.503907-32.769531-12.503907-45.25 0l-113.128906 113.128906-113.132813-113.152344c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503907-12.5 32.769531 0 45.25l113.152344 113.152344-113.128906 113.128906c-12.503907 12.503907-12.503907 32.769531 0 45.25l15.082031 15.082031c12.5 12.5 32.765625 12.5 45.246093 0l113.132813-113.132812 113.128906 113.132812c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082031c12.5-12.503906 12.5-32.769531 0-45.25zm0 0"
+                  fill="#ffffff" data-original="#000000" class=""></path>
+              </g>
+            </svg>
           </a>
         </span>
       </div>
@@ -453,50 +461,50 @@
       </div>
     </div>
     <div class="popup--cart__container">
-      <table>
-        <thead class="cart-header-info">
-          <tr>
-            <th style="width: 50%; padding-left: 10px;">Thông tin sản phẩm</th>
-            <th style="width: 20%; text-align: center;">Đơn giá</th>
-            <th style="width: 15%; text-align: center;">Số lượng</th>
-            <th style="width: 15%; text-align: center;">Thành tiền</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="namepro">
-              <img style="width: 80px; height: 80px;" src="https://bizweb.dktcdn.net/thumb/compact/100/459/658/products/3-jpeg-9f66aa4a-7326-470a-b5bd-aca94379d93e.jpg" alt="">
-              <div>
-                <a>Kem dưỡng da Bioaqua</a>
-                <span style="color: red;">xoá</span>
-              </div>
-            </td>
-            <td style="text-align: center;" ><span>99.000</span><span>đ</span></td>
-            <td style="text-align: center;">
-              <div class="btn-amountPro">
-                <button class="btn-amountPro minus-btn" onclick="minusAmountPro()">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svg w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
-                    </svg>
-                </button>
-                <input type="text" name="amountPro" id="amountPro" value="1">
-                <button class="btn-amountPro plus-btn" onclick="plusAmountPro()">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svg w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                    </svg>
-                </button>
-              </div>
-            </td>
-            <td style="text-align: center;"><span>99.000</span><span>đ</span></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="cart-header-info  d-flex">
+        <div style="width: 50%; padding-left: 10px;">Thông tin sản phẩm</div>
+        <div style="width: 20%; text-align: center;">Đơn giá</div>
+        <div style="width: 15%; text-align: center;">Số lượng</div>
+        <div style="width: 15%; text-align: center;">Thành tiền</div>
+      </div>
+      <div id="products--list" class="row">
+        <!-- <div class=" product--details d-flex justify-content-center align-items-center">
+          <div class="namepro" style="width: 50%; display: flex; flex-direction: row; align-items: center;">
+            <img style="width: 80px; height: 80px;" src="${element.srcImg}" alt="${element.title}">
+            <div style="display: flex; flex-direction: column; justify-content: center; margin-left: 10px;">
+              <a style="text-align: left;">${element.title}</a>
+              <p style="color: red; text-align: left; margin: 0;">xoá</p>
+            </div>
+          </div>
+          <div style="text-align: center; width: 20%"><span>${element.price}</span></div>
+          <div style="text-align: center; width: 15%">
+            <div class="btn-amountPro">
+              <button class="btn-amountPro minus-btn" onclick="minusAmountPro()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="svg w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+                </svg>
+              </button>
+              <input type="text" name="amountPro" id="amountPro" value="1">
+              <button class="btn-amountPro plus-btn" onclick="plusAmountPro()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="svg w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div style="text-align: center; width: 15%"><span>${element.price}</span></div>
+        </div> -->
+
+      </div>
       <div class="cart-bottom-checkout">
         <div class="row">
           <div class=" pop-cartft col-lg-4 col-12 offset-md-8 offset-lg-8 offset-xl-8">
             <div class="cart--subtotal d-flex">
               <div>Tổng tiền: </div>
-              <span style="width: 50%; float: left;text-align: right; color: red;">99.000<span>đ</span></span>
+              <span style="width: 50%; float: left;text-align: right; color: red;"
+                id="price-total"><span>đ</span></span>
             </div>
             <button onclick="location.href='/checkout'" type="button"
               class="button btn btn-default cart__btn-proceed-checkout" id="btn-proceed-checkout"
@@ -512,6 +520,7 @@
     </a>
   </div>
   <div id="background--popup" class="popup--background"></div>
+  <script src="../JS/product.js"></script>
   <script src="../JS/countItems.js"></script>
 </body>
 

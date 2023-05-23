@@ -20,10 +20,12 @@ header {
     margin-right: auto;
     margin-left: auto;
 }
-.row{
+
+.row {
     max-width: 1200px;
     margin: auto;
 }
+
 .header__items--list a {
     text-decoration: none;
     font-weight: 500;
@@ -221,15 +223,18 @@ header {
     display: flex;
     list-style: none;
 }
-.active .page-link{
+
+.active .page-link {
     background-color: #337ab7;
     border-color: #337ab7;
 }
-.page-link:hover{
+
+.page-link:hover {
     background-color: #337ab7;
     border-color: #337ab7;
     color: white;
 }
+
 .page-item:first-child .page-link {
     border-radius: 0;
 }
@@ -238,8 +243,9 @@ header {
     line-height: 20px;
     color: #7d7d7d
 }
+
 /* pop up cart css */
-.popup--cart{
+.popup--cart {
     background: white;
     width: 900px;
     height: 500px;
@@ -249,7 +255,8 @@ header {
     top: 80px;
     z-index: 2;
 }
-.popup-cart-top{
+
+.popup-cart-top {
     font-size: 16px;
     padding-right: 15px;
     font-weight: 400;
@@ -259,7 +266,8 @@ header {
     display: flex;
     justify-content: space-between;
 }
-.popup--count-item{
+
+.popup--count-item {
     border: none;
     width: 10px;
     height: 16px;
@@ -268,9 +276,10 @@ header {
     color: #fff;
     font-size: 16px;
     font-weight: 400;
-    
+
 }
-.popup-cart-sumary{
+
+.popup-cart-sumary {
     font-weight: 400;
     font-size: 16px;
     line-height: 18px;
@@ -279,22 +288,27 @@ header {
     padding: 15px 20px;
     display: block;
 }
-.popup-cart__main{
+
+.popup-cart__main {
     margin-bottom: 0;
     background: #fff;
     padding: 0 20px 20px;
 }
+
 table {
     width: 100%;
 }
+
 .popup--cart__container {
     padding: 0px 20px 20px 20px;
 }
-.cart-header-info{
+
+.cart-header-info {
     border: solid 1px #ebebeb;
     font-weight: bold;
     width: 100%;
 }
+
 .cart-header-info tr th {
     padding: 7px 0px;
     font-size: 16px;
@@ -302,12 +316,7 @@ table {
     color: #333333;
     font-weight: 700;
 }
-tbody tr {
-    border: solid 1px #ebebeb;
-}
-tbody tr td {
-    padding: 10px 0px;
-}
+
 .cart__btn-proceed-checkout {
     width: 100%;
     background-color: #ffb9a4;
@@ -317,16 +326,19 @@ tbody tr td {
     border: 1px solid #ffb9a4;
     border-radius: 0px;
 }
+
 .namepro {
-    display: flex;
+
     gap: 20px;
-    align-items: center ;
+    align-items: center;
     margin-left: 10px;
 }
+
 .namepro div {
-    display: flex;
+
     flex-direction: column;
 }
+
 .btn-amountPro {
     width: 91px;
     height: 28px;
@@ -336,6 +348,7 @@ tbody tr td {
     border-radius: 3px;
     margin: auto;
 }
+
 .btn-amountPro button {
     border: none;
     width: 24px;
@@ -347,14 +360,17 @@ tbody tr td {
     background: #fff;
     padding: 1px 6px;
 }
+
 .btn-amountPro input {
     border: none;
     width: 30px;
     text-align: center;
 }
+
 .pop-cartft {
     padding-top: 20px;
 }
+
 .cart--subtotal {
     display: flex;
     justify-content: space-between;
@@ -377,4 +393,12 @@ tbody tr td {
 .popup--background.active {
     opacity: 0.8;
     visibility: visible;
+}
+.product--details{
+    height: 100px;
+}
+
+#products--list{
+    max-height: 250px;
+    overflow: auto;
 }
