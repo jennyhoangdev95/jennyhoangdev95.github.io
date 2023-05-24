@@ -340,7 +340,7 @@ table {
 }
 
 .btn-amountPro {
-    width: 91px;
+    width: 100px;
     height: 28px;
     display: flex;
     align-items: center;
@@ -401,4 +401,9 @@ table {
 #products--list{
     max-height: 250px;
     overflow: auto;
+}
+
+.product--details{
+    padding: 10px 0;
+    border-bottom: solid 1px #ebebeb
 }

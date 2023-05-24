@@ -109,7 +109,7 @@ let btns = document.querySelectorAll(".btn-cart")
 for (let i = 0; i < btns.length; i++) {
     let btn = btns[i]
     btn.addEventListener("click", add)
-    btn.addEventListener("click", checkout)
+    // btn.addEventListener("click", checkout)
 }
 function add(event) {
     let id = event.target.closest('.btn-cart').dataset.id
@@ -130,26 +130,25 @@ function setItemInLocal(name, value) {
     localStorage.setItem(name, JSON.stringify(listItems))
 };
 
-// //Pop-up
-function checkout() {
-    let popUp = document.getElementById('popup--cart__id');
-    popUp.classList.remove("d-none");
-    let backGround = document.getElementById('background--popup');
-    backGround.classList.add("active");
-
-    let popOut = document.getElementById('popOut');
-        popOut.addEventListener("click", popout);
-    function popout() {
-        let popout = document.getElementById('popup--cart__id');
-        popout.classList.add("d-none");
-        let backGround = document.getElementById('background--popup');
-        backGround.classList.remove("active");;
-    }
-}
+// // //Pop-up
+// function checkout() {
+//     let popUp = document.getElementById('popup--cart__id');
+//     popUp.classList.remove("d-none");
+//     let backGround = document.getElementById('background--popup');
+//     backGround.classList.add("active");
+// }
+// // Pop-out
+//     let popOut = document.getElementById('popOut');
+//         popOut.addEventListener("click", popout);
+//     function popout() {
+//         let popout = document.getElementById('popup--cart__id');
+//         popout.classList.add("d-none");
+//         let backGround = document.getElementById('background--popup');
+//         backGround.classList.remove("active");;
+//     }
 
 // get data from local
 const products = getItemInLocal('products')
-console.log(products)
 
 function getItemInLocal(cname) {
     const cvalue = localStorage.getItem(cname)

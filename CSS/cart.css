@@ -119,3 +119,6 @@ tbody tr td input {
     border: 1px solid #2f80ed;
     color: #2f80ed;
 }
+.cart__container{
+    width: 1000px;
+}

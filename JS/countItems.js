@@ -1,8 +1,17 @@
-
 let cartCount = 0;
+
+if (localStorage.getItem('cartCount')) {
+    cartCount = parseInt(localStorage.getItem('cartCount'));
+}
+
+let countItems = document.querySelectorAll('.countItem');
+countItems.forEach(function (countItem) {
+    countItem.textContent = cartCount;
+});
+
 function addProduct() {
     cartCount++;
-    let countItems = document.querySelectorAll('.countItem');
+    localStorage.setItem('cartCount', cartCount);
     countItems.forEach(function (countItem) {
         countItem.textContent = cartCount;
     });
