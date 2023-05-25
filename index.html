@@ -21,80 +21,80 @@
   <link rel="stylesheet" href="./index.css">
   <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <body>
   <div class="header__img">
     <img class="header__img--img ratio ratio-4x3" src="../image/header-index-img.webp" alt="header">
   </div>
-  <header>
-    <div class="header--menu">
+  <header class="header__page">
+    <div class="header topbar header-menu order-lg-2 order-1">
       <div class="container">
-        <div class="header__navbar">
-          <div class="header__navbar--logo">
-            <nav class="navbar-menu">
-              <div class="container-navbar">
-                <img class="navbar-brand" src="../image/Main-logo.png" alt="navbar-logo">
-                <div class="nav__menu">
-                  <ul class="nav-menu">
-                    <li class="nav-item">
-                      <a href="#">TRANG CHỦ</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="./HTML/produce.html">GIỚI THIỆU</a>
-                    </li>
-                    <li class="nav-item dropdown__select">
-                      <a class="dropdown-toggle" href="./HTML/product.html" role="button" aria-expanded="false">
-                        SẢN PHẨM
-                      </a>
-                      <ul class="dropdown__list dropdown__list1">
-                        <li class="dropdown__select1">
-                          <a class="dropdown__list--item" href="#">
-                            <span>Kem dưỡng da</span>
-                            <i class="fa fa-caret-right"></i>
-                          </a>
-                          <ul class="dropdown__list dropdown__list2">
-                            <li>
-                              <a class="dropdown__list--item " href="./HTML/detailProduct.html">V7 Tonight Light</a>
-                            </li>
-                            <li>
-                              <a class="dropdown__list--item " href="#">Bioaqua</a>
-                            </li>
-                            <li>
-                              <a class="dropdown__list--item " href="#">Collagen</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a class="dropdown__list--item" href="#">
-                            <span>Sữa rửa mặt</span>
-                            <i class="fa fa-caret-right"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown__list--item" href="#">
-                            <span>Dầu gội</span>
-                            <i class="fa fa-caret-right"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown__list--item" href="#">
-                            <span>Sửa tắm</span>
-                            <i class="fa fa-caret-right"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="disabled" href="./HTML/contact.html">LIÊN HỆ</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="disabled" href="./HTML/news.html">TIN TỨC</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
+        <div class="row navbar-menu">
+          <div class="col-lg-2 col-md-6 col-5 contact-header">
+            <a href="#" class="logo d-flex justify-content-center" title="Logo">
+              <img src="../image/Main-logo.png" style="height: 65px;" alt="HKT-logo">
+            </a>
           </div>
-          <div class="navbar__icon">
+          <div class="d-flex justify-content-start align-items-center col-lg-7 col-md-12 col-menu order-2 order-lg-1">
+            <ul class="nav-menu">
+              <li class="nav-item">
+                <a href="#">TRANG CHỦ</a>
+              </li>
+              <li class="nav-item">
+                <a href="./HTML/produce.html">GIỚI THIỆU</a>
+              </li>
+              <li class="nav-item dropdown__select">
+                <a class="dropdown-toggle" href="./HTML/product.html" role="button" aria-expanded="false">
+                  SẢN PHẨM
+                </a>
+                <ul class="dropdown__list dropdown__list1">
+                  <li class="dropdown__select1">
+                    <a class="dropdown__list--item" href="#">
+                      <span>Kem dưỡng da</span>
+                      <i class="fa fa-caret-right"></i>
+                    </a>
+                    <ul class="dropdown__list dropdown__list2">
+                      <li>
+                        <a class="dropdown__list--item " href="./HTML/detailProduct.html">V7 Tonight Light</a>
+                      </li>
+                      <li>
+                        <a class="dropdown__list--item " href="#">Bioaqua</a>
+                      </li>
+                      <li>
+                        <a class="dropdown__list--item " href="#">Collagen</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="dropdown__list--item" href="#">
+                      <span>Sữa rửa mặt</span>
+                      <i class="fa fa-caret-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown__list--item" href="#">
+                      <span>Dầu gội</span>
+                      <i class="fa fa-caret-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown__list--item" href="#">
+                      <span>Sửa tắm</span>
+                      <i class="fa fa-caret-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="disabled" href="./HTML/contact.html">LIÊN HỆ</a>
+              </li>
+              <li class="nav-item">
+                <a class="disabled" href="./HTML/news.html">TIN TỨC</a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="navbar__icon d-flex justify-content-end align-items-center col-lg-3 col-md-6 col-7 search-account order-1 order-lg-2">
             <div class="navbar__icon--item">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18"
                 height="17"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -110,7 +110,7 @@
               </svg>
             </div>
             <div class="navbar__icon--item">
-              <a href="./cart.html" class="navbar__icon--item">
+              <a href="./HTML/cart.html" class="navbar__icon--item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
                   <path
                     d="M17.5373 17.4929L16.6053 6.23836C16.5473 5.51328 15.9074 4.94527 15.1486 4.94527H13.3077V4.86598C13.3077 2.73426 11.498 1 9.27364 1C7.04924 1 5.23958 2.73426 5.23958 4.86598V4.94527H3.39869C2.63989 4.94527 1.99998 5.51324 1.94206 6.23684L1.00986 17.4944C0.937715 18.3958 1.26397 19.2932 1.90501 19.9564C2.54598 20.6196 3.45462 21 4.39803 21H14.1493C15.0926 21 16.0013 20.6196 16.6423 19.9564C17.2834 19.2932 17.6096 18.3958 17.5373 17.4929ZM6.46199 4.86598C6.46199 3.38023 7.7233 2.17148 9.27364 2.17148C10.824 2.17148 12.0853 3.38027 12.0853 4.86598V4.94527H6.46199V4.86598ZM15.7454 19.1604C15.329 19.5912 14.7621 19.8285 14.1493 19.8285H4.39803C3.78515 19.8285 3.21829 19.5912 2.80183 19.1603C2.38534 18.7295 2.18182 18.1696 2.22861 17.5855L3.16081 6.32797C3.17027 6.20953 3.27482 6.11676 3.39873 6.11676H5.23962V7.55953C5.23962 7.88301 5.51329 8.14527 5.85083 8.14527C6.18837 8.14527 6.46204 7.88301 6.46204 7.55953V6.11676H12.0854V7.55953C12.0854 7.88301 12.359 8.14527 12.6966 8.14527C13.0341 8.14527 13.3078 7.88301 13.3078 7.55953V6.11676H15.1486C15.2725 6.11676 15.377 6.20953 15.3867 6.32949L16.3187 17.584C16.3655 18.1696 16.1619 18.7294 15.7454 19.1604Z"
@@ -120,7 +120,7 @@
                     fill="#333333"></path>
                 </svg>
                 <div class="navbar__icon--count-item countItem">0</div>
-              </a>
+              </a>  
             </div>
           </div>
         </div>
@@ -1052,9 +1052,11 @@
             <div class="mail-text">
               <svg xmlns="http://www.w3.org/2000/svg" width="63" height="36" viewBox="0 0 63 36" fill="none">
                 <g clip-path="url(#clip0_131_4747)">
-                  <path d="M12.7695 2.04199L59.664 2.31247L36.2851 22.598C36.2851 22.598 30.2695 21.1104 12.2227 2.17723"
+                  <path
+                    d="M12.7695 2.04199L59.664 2.31247L36.2851 22.598C36.2851 22.598 30.2695 21.1104 12.2227 2.17723"
                     fill="white"></path>
-                  <path d="M12.7695 2.04199L59.664 2.31247L36.2851 22.598C36.2851 22.598 30.2695 21.1104 12.2227 2.17723"
+                  <path
+                    d="M12.7695 2.04199L59.664 2.31247L36.2851 22.598C36.2851 22.598 30.2695 21.1104 12.2227 2.17723"
                     stroke="black" stroke-miterlimit="10"></path>
                   <path
                     d="M57.3945 0H14C10.9238 0 8.39453 2.48835 8.39453 5.5447V7.62735C8.39453 8.38467 9.02343 9.00676 9.78906 9.00676C10.5547 9.00676 11.1836 8.38467 11.1836 7.62735V5.5447C11.1836 5.27423 11.2519 4.99023 11.3203 4.71976L27.0019 18.0135L11.334 31.2938C11.2656 31.0233 11.1973 30.7393 11.1973 30.4688V28.3862C11.1973 27.6288 10.5684 27.0068 9.80273 27.0068C9.0371 27.0068 8.4082 27.6288 8.4082 28.3862V30.4688C8.4082 33.5116 10.9238 36.0135 14.0137 36.0135H57.4082C60.4843 36.0135 63.0136 33.5252 63.0136 30.4688V5.5447C63 2.48835 60.4843 0 57.3945 0ZM13.4394 2.83997C13.5762 2.77235 13.7949 2.77235 14 2.77235H57.3945C57.5996 2.77235 57.8183 2.77235 57.9551 2.83997L36.6133 20.9076C36.0527 21.3268 35.3555 21.3268 34.7949 20.9076L13.4394 2.83997ZM57.3945 33.2412H14C13.7949 33.2412 13.5762 33.2412 13.4394 33.1735L29.1894 19.8122L32.9629 23.0714C33.7285 23.7611 34.7129 24.1127 35.6973 24.1127C36.6816 24.1127 37.6523 23.7611 38.4316 23.0714L42.2051 19.8122L57.9551 33.1735C57.8183 33.2412 57.6133 33.2412 57.3945 33.2412ZM60.1972 30.4688C60.1972 30.7393 60.1289 31.0233 60.0605 31.2938L44.3789 18L60.0605 4.70624C60.1289 4.97671 60.1972 5.26071 60.1972 5.53118V30.4688ZM4.19726 14.5379C4.19726 13.7806 4.82617 13.1585 5.59179 13.1585H13.9863C14.7519 13.1585 15.3809 13.7806 15.3809 14.5379C15.3809 15.2953 14.7519 15.9174 13.9863 15.9174H5.60547C4.82617 15.9309 4.19726 15.3088 4.19726 14.5379ZM14 22.855H1.39453C0.628906 22.855 0 22.2329 0 21.4621C0 20.7047 0.628906 20.0826 1.39453 20.0826H14C14.7656 20.0826 15.3945 20.7047 15.3945 21.4621C15.3945 22.2329 14.7656 22.855 14 22.855Z"
@@ -1213,23 +1215,16 @@
         © Bản quyền thuộc về HKT Team | Cung cấp bởi HKT team
       </div>
     </footer>
-      <div>
-        <a href="#" class="backtop hide" title="Lên đầu trang"><i class="fa-solid fa-angle-up" style="scale: 1.2;"></i>
-        </a>
-      </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>  
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-1.11.0.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script>
+    <div>
+      <a href="#" class="backtop hide" title="Lên đầu trang"><i class="fa-solid fa-angle-up" style="scale: 1.2;"></i>
+      </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="./index.js"></script>
     <script src="./JS/countItems.js"></script>
 </body>

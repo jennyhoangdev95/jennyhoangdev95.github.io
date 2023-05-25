@@ -109,7 +109,7 @@ let btns = document.querySelectorAll(".btn-cart")
 for (let i = 0; i < btns.length; i++) {
     let btn = btns[i]
     btn.addEventListener("click", add)
-    // btn.addEventListener("click", checkout)
+    btn.addEventListener("click", checkout)
 }
 function add(event) {
     let id = event.target.closest('.btn-cart').dataset.id
@@ -130,25 +130,26 @@ function setItemInLocal(name, value) {
     localStorage.setItem(name, JSON.stringify(listItems))
 };
 
-// // //Pop-up
-// function checkout() {
-//     let popUp = document.getElementById('popup--cart__id');
-//     popUp.classList.remove("d-none");
-//     let backGround = document.getElementById('background--popup');
-//     backGround.classList.add("active");
-// }
-// // Pop-out
-//     let popOut = document.getElementById('popOut');
-//         popOut.addEventListener("click", popout);
-//     function popout() {
-//         let popout = document.getElementById('popup--cart__id');
-//         popout.classList.add("d-none");
-//         let backGround = document.getElementById('background--popup');
-//         backGround.classList.remove("active");;
-//     }
+// //Pop-up
+function checkout() {
+    let popUp = document.getElementById('popup--cart__id');
+    popUp.classList.remove("d-none");
+    let backGround = document.getElementById('background--popup');
+    backGround.classList.add("active");
+
+    let popOut = document.getElementById('popOut');
+    popOut.addEventListener("click", popout);
+    function popout() {
+        let popout = document.getElementById('popup--cart__id');
+        popout.classList.add("d-none");
+        let backGround = document.getElementById('background--popup');
+        backGround.classList.remove("active");;
+    }
+}
 
 // get data from local
 const products = getItemInLocal('products')
+console.log(products)
 
 function getItemInLocal(cname) {
     const cvalue = localStorage.getItem(cname)
@@ -159,27 +160,35 @@ let containerOrderList = document.getElementById("products--list")
 
 let arrayProducts = ""
 let priceTotal = 0
-products.forEach(element => {
+let listID = []
+products.forEach((item) => {
+    if (listID.indexOf(item.id) === -1) {
+        listID.push(item.id)
+    }
+})
+
+listID.forEach(id => {
+    let element = products.filter((element) => element.id === id)
     let html2 = `
     <div class=" product--details d-flex justify-content-center align-items-center">
     <div class="namepro" style="width: 50%; display: flex; flex-direction: row; align-items: center;">
-    <img style="width: 80px; height: 80px;" src="${element.srcImg}" alt="${element.title}">
+    <img style="width: 80px; height: 80px;" src="${element[0].srcImg}" alt="${element[0].title}">
         <div style="display: flex; flex-direction: column; justify-content: center; margin-left: 10px;">
-        <a style="text-align: left;">${element.title}</a>
+        <a style="text-align: left;">${element[0].title}</a>
         <p style="color: red; text-align: left; margin: 0;">xoá</p>
         </div>
     </div>
-    <div style="text-align: center; width: 20%"><span>${element.price}</span></div>
+    <div style="text-align: center; width: 20%"><span>${element[0].price}</span></div>
     <div style="text-align: center; width: 15%">
         <div class="btn-amountPro">
-            <button class="btn-amountPro minus-btn" onclick="minusAmountPro()">
+            <button class="btn-amountPro minus-btn removeOne" data-id=${element[0].id}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="svg w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
                 </svg>
             </button>
-            <input type="text" name="amountPro" id="amountPro" value="1">
-            <button class="btn-amountPro plus-btn" onclick="plusAmountPro()">
+            <input type="text" name="amountPro" id="count-${element[0].id}" value="${element.length}">
+            <button class="btn-amountPro plus-btn addOne" data-id=${element[0].id}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="svg w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -187,18 +196,18 @@ products.forEach(element => {
             </button>
         </div>
     </div>
-    <div style="text-align: center; width: 15%"><span>${element.price}</span></div>
+    <div style="text-align: center; width: 15%"><span>${element[0].price}</span></div>
     </div>
     </div>
 `
     arrayProducts += html2
-    priceTotal += parseFloat(element.price);
+    priceTotal += parseFloat(element[0].price) * element.length;
 });
 
 containerOrderList.innerHTML = arrayProducts;
 let containerPriceTotal = document.getElementById("price-total")
-if (priceTotal < 1000){
-    containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ"   
+if (priceTotal < 1000) {
+    containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ"
 } else {
     containerPriceTotal.innerHTML = (priceTotal / 1000).toLocaleString() + "0.000đ"
 }

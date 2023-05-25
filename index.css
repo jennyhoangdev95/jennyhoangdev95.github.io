@@ -40,21 +40,16 @@ header {
 }
 
 .header__navbar {
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 64px;
 }
 
-.container-navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
 .navbar-brand {
-    margin-right: 70px;
     height: 64px;
     width: 64px;
 }
@@ -78,9 +73,6 @@ header {
 }
 
 .navbar__icon {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     gap: 30px;
     cursor: pointer;
 }
