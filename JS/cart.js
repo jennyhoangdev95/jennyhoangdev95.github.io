@@ -59,7 +59,7 @@ if (products.length === 0) {
             </button>
         </div>
     </div>
-    <div style="text-align: center; width: 15%"><span>${element[0].price}</span></div>
+    <div style="text-align: center; width: 15%"><span>${parseFloat(element[0].price) * element.length}.000đ</span></div>
     </div>
     </div>
 `
