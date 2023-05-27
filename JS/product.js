@@ -113,8 +113,6 @@ for (let i = 0; i < btns.length; i++) {
 }
 function add(event) {
     let id = event.target.closest('.btn-cart').dataset.id
-    console.log(id)
-
     let item = mockData.filter((element) => {
         if (element.id === Number(id)) {
             return element
@@ -132,12 +130,7 @@ function setItemInLocal(name, value) {
     localStorage.setItem(name, JSON.stringify(listItems))
 };
 // get data from local
-const products = getItemInLocal('products')
 
-function getItemInLocal(cname) {
-    const cvalue = localStorage.getItem(cname)
-    return cvalue ? JSON.parse(cvalue) : ""
-}
 
 //Pop-up
 function checkout() {
@@ -146,7 +139,7 @@ function checkout() {
     let backGround = document.getElementById('background--popup');
     backGround.classList.add("active");
     updatePopup();
-
+    
     let popOut = document.getElementById('popOut');
     popOut.addEventListener("click", popout);
     function popout() {
@@ -162,6 +155,11 @@ function checkout() {
 // xử lý Popups
 function updatePopup() {
     const products = getItemInLocal('products');
+    function getItemInLocal(cname) {
+        const cvalue = localStorage.getItem(cname)
+        return cvalue ? JSON.parse(cvalue) : ""
+    }
+    
     let containerOrderList = document.getElementById("products--list");
     let arrayProducts = "";
     let priceTotal = 0;
@@ -219,30 +217,36 @@ function updatePopup() {
     }
 
 
-// Lấy tất cả các nút + và - trong popup
 let plusBtns = document.querySelectorAll('.addOne');
 let minusBtns = document.querySelectorAll('.removeOne');
 
-// Thêm sự kiện click cho các nút +
+
 plusBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        let id = btn.dataset.id;
+    btn.addEventListener('click', (event) => {
+        let id = event.target.closest('.btn-amountPro').dataset.id;
+        console.log(id)
+        let items = products.filter((item) => item.id === Number(id));
+        console.log(items)
+        products.push(items[0])
+        setItemInLocal("products", products)
         let countInput = document.querySelector(`#count-${id}`);
-        let count = parseInt(countInput.value);
-        count++;
+        let count = countInput.value;
+        count = items.length + 1
         countInput.value = count;
     });
 });
 
-// Thêm sự kiện click cho các nút -
+
 minusBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        let id = btn.dataset.id;
+    btn.addEventListener('click', (event) => {
+        let id = event.target.closest('.btn-amountPro').dataset.id;
+        let items = products.filter((item) => item.id === Number(id));
+        products.pop()
+        setItemInLocal("products", products)
         let countInput = document.querySelector(`#count-${id}`);
-        let count = parseInt(countInput.value);
-        // Giảm số lượng sản phẩm chỉ khi số lượng hiện tại lớn hơn 1
+        let count = countInput.value;
         if (count > 1) {
-            count--;
+            count = items.length - 1
             countInput.value = count;
         }
     });

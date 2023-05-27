@@ -122,3 +122,19 @@ tbody tr td input {
 .cart__container{
     width: 1000px;
 }
+
+.cart__btn-proceed-back{
+    font-size: 13px;
+    color: #ffb9a4;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px;
+    display: block;
+    background: #fff;
+    float: left;
+    border: 1px solid #ffb9a4;
+}
+.cart__btn-proceed-back:hover {
+    color: white;
+    background: #ffb9a4;
+}
