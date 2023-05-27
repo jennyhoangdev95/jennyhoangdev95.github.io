@@ -113,6 +113,8 @@ for (let i = 0; i < btns.length; i++) {
 }
 function add(event) {
     let id = event.target.closest('.btn-cart').dataset.id
+    console.log(id)
+
     let item = mockData.filter((element) => {
         if (element.id === Number(id)) {
             return element
@@ -129,13 +131,21 @@ function setItemInLocal(name, value) {
     listItems.push(value)
     localStorage.setItem(name, JSON.stringify(listItems))
 };
+// get data from local
+const products = getItemInLocal('products')
 
-// //Pop-up
+function getItemInLocal(cname) {
+    const cvalue = localStorage.getItem(cname)
+    return cvalue ? JSON.parse(cvalue) : ""
+}
+
+//Pop-up
 function checkout() {
     let popUp = document.getElementById('popup--cart__id');
     popUp.classList.remove("d-none");
     let backGround = document.getElementById('background--popup');
     backGround.classList.add("active");
+    updatePopup();
 
     let popOut = document.getElementById('popOut');
     popOut.addEventListener("click", popout);
@@ -143,33 +153,28 @@ function checkout() {
         let popout = document.getElementById('popup--cart__id');
         popout.classList.add("d-none");
         let backGround = document.getElementById('background--popup');
-        backGround.classList.remove("active");;
+        backGround.classList.remove("active");
     }
 }
 
-// get data from local
-const products = getItemInLocal('products')
-console.log(products)
 
-function getItemInLocal(cname) {
-    const cvalue = localStorage.getItem(cname)
-    return cvalue ? JSON.parse(cvalue) : ""
-}
 
-let containerOrderList = document.getElementById("products--list")
+// xử lý Popups
+function updatePopup() {
+    const products = getItemInLocal('products');
+    let containerOrderList = document.getElementById("products--list");
+    let arrayProducts = "";
+    let priceTotal = 0;
+    let listID = [];
+    products.forEach((item) => {
+        if (listID.indexOf(item.id) === -1) {
+            listID.push(item.id)
+        }
+    })
 
-let arrayProducts = ""
-let priceTotal = 0
-let listID = []
-products.forEach((item) => {
-    if (listID.indexOf(item.id) === -1) {
-        listID.push(item.id)
-    }
-})
-
-listID.forEach(id => {
-    let element = products.filter((element) => element.id === id)
-    let html2 = `
+    listID.forEach(id => {
+        let element = products.filter((element) => element.id === id)
+        let html2 = `
     <div class=" product--details d-flex justify-content-center align-items-center">
     <div class="namepro" style="width: 50%; display: flex; flex-direction: row; align-items: center;">
     <img style="width: 80px; height: 80px;" src="${element[0].srcImg}" alt="${element[0].title}">
@@ -196,18 +201,51 @@ listID.forEach(id => {
             </button>
         </div>
     </div>
-    <div style="text-align: center; width: 15%"><span>${element[0].price}</span></div>
+    <div style="text-align: center; width: 15%"><span>${parseFloat(element[0].price) * element.length}.000đ</span></div>
     </div>
     </div>
 `
-    arrayProducts += html2
-    priceTotal += parseFloat(element[0].price) * element.length;
+        arrayProducts += html2
+        priceTotal += parseFloat(element[0].price) * element.length;
+    });
+
+    containerOrderList.innerHTML = arrayProducts;
+
+    let containerPriceTotal = document.getElementById("price-total")
+    if (priceTotal < 1000) {
+        containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ"
+    } else {
+        containerPriceTotal.innerHTML = (priceTotal / 1000).toLocaleString() + "0.000đ"
+    }
+
+
+// Lấy tất cả các nút + và - trong popup
+let plusBtns = document.querySelectorAll('.addOne');
+let minusBtns = document.querySelectorAll('.removeOne');
+
+// Thêm sự kiện click cho các nút +
+plusBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        let id = btn.dataset.id;
+        let countInput = document.querySelector(`#count-${id}`);
+        let count = parseInt(countInput.value);
+        count++;
+        countInput.value = count;
+    });
 });
 
-containerOrderList.innerHTML = arrayProducts;
-let containerPriceTotal = document.getElementById("price-total")
-if (priceTotal < 1000) {
-    containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ"
-} else {
-    containerPriceTotal.innerHTML = (priceTotal / 1000).toLocaleString() + "0.000đ"
+// Thêm sự kiện click cho các nút -
+minusBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        let id = btn.dataset.id;
+        let countInput = document.querySelector(`#count-${id}`);
+        let count = parseInt(countInput.value);
+        // Giảm số lượng sản phẩm chỉ khi số lượng hiện tại lớn hơn 1
+        if (count > 1) {
+            count--;
+            countInput.value = count;
+        }
+    });
+});
+
 }
