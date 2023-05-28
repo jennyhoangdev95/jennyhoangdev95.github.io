@@ -4,74 +4,86 @@ const mockData = [
     {
         id: 1,
         title: "Sữa tắm Dove",
-        price: "150.000₫",
-        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-da5efbe5-c9c6-46e3-a19b-c66b5c566971.jpg?v=1657707796000"
+        price: "150.000",
+        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-da5efbe5-c9c6-46e3-a19b-c66b5c566971.jpg?v=1657707796000",
+        quantity: 1
     },
     {
         id: 2,
         title: "Sữa tắm Purité",
-        price: "200.000₫",
-        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/5-jpeg-4298c8de-60bf-46ba-a1a4-78eb7df3e047.jpg?v=1657707688000"
+        price: "200.000",
+        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/5-jpeg-4298c8de-60bf-46ba-a1a4-78eb7df3e047.jpg?v=1657707688000",
+        quantity: 1
     },
     {
         id: 3,
         title: "Sữa tắm Pharmacity",
-        price: "150.000₫",
-        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/2-jpeg-e4f13416-93d1-4d5c-b7a9-5ae454ef4d9d.jpg?v=1657707526000"
+        price: "150.000",
+        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/2-jpeg-e4f13416-93d1-4d5c-b7a9-5ae454ef4d9d.jpg?v=1657707526000",
+        quantity: 1
     },
     {
         id: 4,
         title: "Sữa tắm ST.Ives",
-        price: "110.000₫",
-        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-9c9951ce-445d-42c7-9d57-a9596ec97336.jpg?v=1657707111000"
+        price: "110.000",
+        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-9c9951ce-445d-42c7-9d57-a9596ec97336.jpg?v=1657707111000",
+        quantity: 1
     },
     {
         id: 5,
         title: "Sữa tắm LOVE BEAUTY & PLANET",
-        price: "150.000₫",
-        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/5-jpeg-40a9699c-5ca8-4231-8ff5-4d60e4917b72.jpg?v=1657707031000"
+        price: "150.000",
+        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/5-jpeg-40a9699c-5ca8-4231-8ff5-4d60e4917b72.jpg?v=1657707031000",
+        quantity: 1
     },
     {
         id: 6,
         title: "Sữa rửa mặt Senka",
-        price: "80.000₫",
-        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/5-jpeg-de46ebbc-476e-4642-b635-c1fe250d6fcd.jpg?v=1657706907000"
+        price: "80.000",
+        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/5-jpeg-de46ebbc-476e-4642-b635-c1fe250d6fcd.jpg?v=1657706907000",
+        quantity: 1
     },
     {
         id: 7,
         title: "Sữa rửa mặt Hazeline",
-        price: "55.000₫",
-        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-c5582b5e-e1a6-45a4-90e6-90063370021b.jpg?v=1657706759000"
+        price: "55.000",
+        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/3-jpeg-c5582b5e-e1a6-45a4-90e6-90063370021b.jpg?v=1657706759000",
+        quantity: 1
     },
     {
         id: 8,
         title: "Sữa rửa mặt Hatomuzi",
-        price: "95.000₫",
-        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/2-jpeg-1ecf7f6c-428e-4b09-a57c-8ed072188b73.jpg?v=1657706673000"
+        price: "95.000",
+        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/2-jpeg-1ecf7f6c-428e-4b09-a57c-8ed072188b73.jpg?v=1657706673000",
+        quantity: 1
     },
     {
         id: 9,
         title: "Sữa rửa mặt Rice milk",
-        price: "75.000₫",
-        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/2-jpeg-c6697a74-c45c-4b65-8ceb-743294c1ba3a.jpg?v=1657706562000"
+        price: "75.000",
+        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/2-jpeg-c6697a74-c45c-4b65-8ceb-743294c1ba3a.jpg?v=1657706562000",
+        quantity: 1
     },
     {
         id: 10,
         title: "Sữa rửa mặt Eucerin",
-        price: "55.000₫",
-        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/4-jpeg-a7e3fb2d-d7f4-4384-a401-56e248d580d4.jpg?v=1657706444000"
+        price: "55.000",
+        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/4-jpeg-a7e3fb2d-d7f4-4384-a401-56e248d580d4.jpg?v=1657706444000",
+        quantity: 1
     },
     {
         id: 11,
         title: "Sữa rửa mặt Clinic",
-        price: "65.000₫",
-        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/2-jpeg-caea9330-39c7-4c8d-aa9e-1c1c5e4118b9.jpg?v=1657706298000"
+        price: "65.000",
+        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/2-jpeg-caea9330-39c7-4c8d-aa9e-1c1c5e4118b9.jpg?v=1657706298000",
+        quantity: 1
     },
     {
         id: 12,
         title: "Kem dưỡng da  V7 Toning Light",
-        price: "80.000₫",
-        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/4-jpeg-8f345d84-332c-423c-a8cb-6b2a997b0c49.jpg?v=1658809804000"
+        price: "80.000",
+        srcImg: "//bizweb.dktcdn.net/thumb/large/100/459/658/products/4-jpeg-8f345d84-332c-423c-a8cb-6b2a997b0c49.jpg?v=1658809804000",
+        quantity: 1
     },
 ]
 let html = ""
@@ -96,7 +108,7 @@ for (let index = 0; index < mockData.length; index++) {
         </div>
         <div class="product--information">
             <h3 class="product-name"><a href="#" title=${mockData[index].title}>${mockData[index].title}</a></h3>
-            <div class="price-box"> <strong>${mockData[index].price}</strong></div>
+            <div class="price-box"> <strong>${mockData[index].price}đ</strong></div>
         </div>
     </div>
     `
@@ -118,6 +130,7 @@ function add(event) {
             return element
         }
     })
+
     setItemInLocal('products', item[0])
 }
 // cover data form local storage
@@ -139,7 +152,7 @@ function checkout() {
     let backGround = document.getElementById('background--popup');
     backGround.classList.add("active");
     updatePopup();
-    
+
     let popOut = document.getElementById('popOut');
     popOut.addEventListener("click", popout);
     function popout() {
@@ -159,7 +172,7 @@ function updatePopup() {
         const cvalue = localStorage.getItem(cname)
         return cvalue ? JSON.parse(cvalue) : ""
     }
-    
+
     let containerOrderList = document.getElementById("products--list");
     let arrayProducts = "";
     let priceTotal = 0;
@@ -181,7 +194,7 @@ function updatePopup() {
         <p style="color: red; text-align: left; margin: 0;">xoá</p>
         </div>
     </div>
-    <div style="text-align: center; width: 20%"><span>${element[0].price}</span></div>
+    <div style="text-align: center; width: 20%"><span>${element[0].price}đ</span></div>
     <div style="text-align: center; width: 15%">
         <div class="btn-amountPro">
             <button class="btn-amountPro minus-btn removeOne" data-id=${element[0].id}>
@@ -190,7 +203,7 @@ function updatePopup() {
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
                 </svg>
             </button>
-            <input type="text" name="amountPro" id="count-${element[0].id}" value="${element.length}">
+            <input type="text" name="amountPro" id="count-${element[0].id}" value="${element[0].quantity}">
             <button class="btn-amountPro plus-btn addOne" data-id=${element[0].id}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="svg w-6 h-6">
@@ -199,7 +212,7 @@ function updatePopup() {
             </button>
         </div>
     </div>
-    <div style="text-align: center; width: 15%"><span>${parseFloat(element[0].price) * element.length}.000đ</span></div>
+    <div style="text-align: center; width: 15%" id="price-${element[0].id}"><span>${(element[0].price)}</span></div>
     </div>
     </div>
 `
@@ -209,47 +222,56 @@ function updatePopup() {
 
     containerOrderList.innerHTML = arrayProducts;
 
+    let plusBtns = document.querySelectorAll('.addOne');
+    let minusBtns = document.querySelectorAll('.removeOne');
+
+
+    plusBtns.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            let id = event.target.closest('.btn-amountPro').dataset.id;
+            console.log(id)
+            localStorage.removeItem('products')
+            products.forEach((item) => {
+                if (item.id === Number(id)) {
+                    item.quantity = item.quantity + 1
+                    let countInput = document.querySelector(`#count-${id}`);
+                    countInput.value = item.quantity;
+                    let updatePricePro = document.querySelector(`#price-${id}`);
+                    updatePricePro.innerHTML = parseInt(item.quantity * item.price) + ".000đ";
+                    console.log(updatePricePro)
+                    console.log(item.price);
+
+                }
+                setItemInLocal("products", item)
+            })
+        });
+    });
+
+
+    minusBtns.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            let id = event.target.closest('.btn-amountPro').dataset.id;
+            localStorage.removeItem('products')
+            products.forEach((item) => {
+                if (item.id === Number(id)) {
+                    item.quantity = item.quantity - 1
+                    let countInput = document.querySelector(`#count-${id}`);
+                    countInput.value = item.quantity;
+                }
+                if (item.quantity > 0) {
+                    setItemInLocal("products", item)
+                } else {
+
+                }
+            })
+        });
+    });
+
     let containerPriceTotal = document.getElementById("price-total")
     if (priceTotal < 1000) {
         containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ"
     } else {
         containerPriceTotal.innerHTML = (priceTotal / 1000).toLocaleString() + "0.000đ"
     }
-
-
-let plusBtns = document.querySelectorAll('.addOne');
-let minusBtns = document.querySelectorAll('.removeOne');
-
-
-plusBtns.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        let id = event.target.closest('.btn-amountPro').dataset.id;
-        console.log(id)
-        let items = products.filter((item) => item.id === Number(id));
-        console.log(items)
-        products.push(items[0])
-        setItemInLocal("products", products)
-        let countInput = document.querySelector(`#count-${id}`);
-        let count = countInput.value;
-        count = items.length + 1
-        countInput.value = count;
-    });
-});
-
-
-minusBtns.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        let id = event.target.closest('.btn-amountPro').dataset.id;
-        let items = products.filter((item) => item.id === Number(id));
-        products.pop()
-        setItemInLocal("products", products)
-        let countInput = document.querySelector(`#count-${id}`);
-        let count = countInput.value;
-        if (count > 1) {
-            count = items.length - 1
-            countInput.value = count;
-        }
-    });
-});
 
 }
