@@ -68,12 +68,7 @@ if (products.length === 0) {
     });
 
     containerOrderList.innerHTML = arrayProducts;
-    let containerPriceTotal = document.getElementById("price-total")
-    if (priceTotal < 1000) {
-        containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ"
-    } else {
-        containerPriceTotal.innerHTML = (priceTotal / 1000).toLocaleString() + "0.000đ"
-    }
+
 }
 
 let plusBtns = document.querySelectorAll('.addOne');
@@ -91,13 +86,18 @@ plusBtns.forEach(btn => {
                 let countInput = document.querySelector(`#count-${id}`);
                 countInput.value = item.quantity;
                 let updatePricePro = document.querySelector(`#price-${id}`);
-                updatePricePro.innerHTML = parseInt(item.quantity * item.price) + ".000đ";
-                console.log(updatePricePro)
-                console.log(item.price);
-
+                updatePricePro.innerHTML = parseInt(item.quantity * item.price).toLocaleString() + ".000đ";
             }
             setItemInLocal("products", item)
         })
+        // sau khi cập nhật số lượng sản phẩm, gọi lại hàm tính tổng giá tiền và cập nhập nhật giá trị lên giao diện
+        let containerPriceTotal = document.getElementById("price-total");
+        let priceTotal = calculateTotalPrice();
+        if (priceTotal < 1000) {
+            containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ";
+        } else {
+            containerPriceTotal.innerHTML = (priceTotal / 1000).toLocaleString() + "0.000đ";
+        }
     });
 });
 
@@ -106,19 +106,47 @@ minusBtns.forEach(btn => {
     btn.addEventListener('click', (event) => {
         let id = event.target.closest('.btn-amountPro').dataset.id;
         localStorage.removeItem('products')
-        products.forEach((item) => {
+        products.forEach((item, index) => {
             if (item.id === Number(id)) {
-                item.quantity = item.quantity - 1
-                let countInput = document.querySelector(`#count-${id}`);
-                countInput.value = item.quantity;
-                let updatePricePro = document.querySelector(`#price-${id}`);
-                updatePricePro.innerHTML = parseInt(item.quantity * item.price) + ".000đ";
+                item.quantity = item.quantity - 1;
+                if (item.quantity === 0) {
+                    products.splice(index, 1);
+                    localStorage.setItem('products', JSON.stringify(products));
+                    updatePopup();
+                } else {
+                    let countInput = document.querySelector(`#count-${id}`);
+                    countInput.value = item.quantity;
+                    let updatePricePro = document.querySelector(`#price-${id}`);
+                    updatePricePro.innerHTML = parseInt(item.quantity * item.price).toLocaleString() + ".000đ";
+                    setItemInLocal("products", item);
+                }
             }
-            if (item.quantity > 0) {
-                setItemInLocal("products", item)
-            } else {
-
-            }
-        })
+        });
+        // sau khi cập nhật số lượng sản phẩm, gọi lại hàm tính tổng giá tiền và cập nhập nhật giá trị lên giao diện
+        let containerPriceTotal = document.getElementById("price-total");
+        let priceTotal = calculateTotalPrice();
+        if (priceTotal < 1000) {
+            containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ";
+        } else {
+            containerPriceTotal.innerHTML = (priceTotal / 1000).toLocaleString() + "0.000đ";
+        }
     });
 });
+let containerPriceTotal = document.getElementById("price-total")
+    let priceTotal = calculateTotalPrice();
+    function calculateTotalPrice() {
+        const products = JSON.parse(localStorage.getItem('products')) || [];
+        let totalPrice = 0;
+        for (let i = 0; i < products.length; i++) {
+            let product = products[i];
+            let productPrice = product.price * product.quantity;
+            totalPrice += productPrice;
+        }
+        return totalPrice;
+    }
+    if (priceTotal < 1000) {
+        containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ"
+
+    } else {
+        containerPriceTotal.innerHTML = (priceTotal / 1000).toLocaleString() + "0.000đ"
+    }

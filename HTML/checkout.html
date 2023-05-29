@@ -5,8 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="../CSS/">
+    <title>Sản phẩm</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- Font -->
+    <link rel="stylesheet" href="../CSS/product.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <!-- Icon fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../CSS/checkout.css">
 </head>
 
 <body>
@@ -17,7 +30,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Giỏ hàng HTK của bạn</title>
+        <title>Thanh toán</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -152,93 +165,90 @@
                 </nav>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-75 ">
                 <div class="container">
-                        <div class="row">
-                            <div class="col-6">
-                                <h3 class="d-flex justify-content-center">Thông tin nhận hàng</h3>
-                                <nav>
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <div class="navbar--left">
-                                            <form class="d-flex" role="search">
-                                                <span>Tên bạn là:<input class="form-control m-2" type="search"
-                                                        placeholder="Họ và tên" aria-label="Search">
-                                                    <span>Email của bạn:<input class="form-control m-2" type="search"
-                                                            placeholder="Email@gmail.com" aria-label="Search">
-                                                        <span>Số điện thoại của bạn:<input class="form-control m-2"
-                                                                type="search" placeholder="Số điện thoại"
-                                                                aria-label="Search">
-                                                            <span>Địa chỉ:<input class="form-control m-2" type="search"
-                                                                    placeholder="Địa chỉ" aria-label="Search">
-                                                                <span>Ghi chú:<input class="form-control m-2"
-                                                                        type="search" placeholder="Ghi chú"
-                                                                        aria-label="Search">
-                                            </form>
+                    <div class="row">
+                        <div class="col-6">
+                            <h3 class="d-flex justify-content-center">
+                                Thông tin nhận hàng</h3>
+                            <nav>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="navbar--left">
+                                        <form class="d-flex" role="search">
+                                            <span>Tên bạn là:<input class="form-control m-2" type="search"
+                                                    placeholder="Họ và tên" aria-label="Search">
+                                                <span>Email của bạn:<input class="form-control m-2" type="search"
+                                                        placeholder="Email@gmail.com" aria-label="Search">
+                                                    <span>Số điện thoại của bạn:<input class="form-control m-2"
+                                                            type="search" placeholder="Số điện thoại"
+                                                            aria-label="Search">
+                                                        <span>Địa chỉ:<input class="form-control m-2" type="search"
+                                                                placeholder="Địa chỉ" aria-label="Search">
+                                                            <span>Ghi chú:<input class="form-control m-2" type="search"
+                                                                    placeholder="Ghi chú" aria-label="Search">
+                                        </form>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="col-6">
+                            <div class="col col--two">
+                                <section class="section" data-define="{shippingMethod: '676444_0,40.000 VND'}">
+                                    <div class="section__header">
+                                        <div class="layout-flex">
+                                            <h3 class="section__title layout-flex__item layout-flex__item--stretch">
+                                                <i class="fa fa-truck fa-lg section__title--icon hide-on-desktop"></i>
+                                                Vận chuyển
+                                            </h3>
                                         </div>
                                     </div>
-                                </nav>
-                            </div>
-                            <div class="col-6">
-                                <div class="col col--two">
-                                    <section class="section" data-define="{shippingMethod: '676444_0,40.000 VND'}">
-                                        <div class="section__header">
-                                            <div class="layout-flex">
-                                                <h3 class="section__title layout-flex__item layout-flex__item--stretch">
-                                                    <i
-                                                        class="fa fa-truck fa-lg section__title--icon hide-on-desktop"></i>
-                                                    Vận chuyển
-                                                </h3>
-                                            </div>
-                                        </div>
-                                        <div class="section__content" data-tg-refresh="refreshShipping"
-                                            id="shippingMethodList"
-                                            data-define="{isAddressSelecting: false, shippingMethods: []}">
+                                    <div class="section__content" data-tg-refresh="refreshShipping"
+                                        id="shippingMethodList"
+                                        data-define="{isAddressSelecting: false, shippingMethods: []}">
 
-                                            <div class="content-box"
-                                                data-bind-show="!isLoadingShippingMethod &amp;&amp; !isAddressSelecting &amp;&amp; !isLoadingShippingError">
-                                                <div class="content-box__row"
-                                                    data-define-array="{shippingMethods: {name: '676444_0,40.000 VND', textPrice: '40.000₫', textDiscountPrice: '-', subtotalPriceWithShippingFee: '510.000₫'}}">
-                                                    <div class="radio-wrapper">
-                                                        <div>
-                                                            <span class="radio__input">
-                                                                <input type="radio" class="input-radio"
-                                                                    name="shippingMethod" id="shippingMethod-676444_0"
-                                                                    value="676444_0,40.000 VND"
-                                                                    data-bind="shippingMethod">
+                                        <div class="content-box"
+                                            data-bind-show="!isLoadingShippingMethod &amp;&amp; !isAddressSelecting &amp;&amp; !isLoadingShippingError">
+                                            <div class="content-box__row"
+                                                data-define-array="{shippingMethods: {name: '676444_0,40.000 VND', textPrice: '40.000₫', textDiscountPrice: '-', subtotalPriceWithShippingFee: '510.000₫'}}">
+                                                <div class="radio-wrapper">
+                                                    <div>
+                                                        <span class="radio__input">
+                                                            <input type="radio" class="input-radio"
+                                                                name="shippingMethod" id="shippingMethod-676444_0"
+                                                                value="676444_0,40.000 VND" data-bind="shippingMethod">
+                                                        </span>
+                                                        <label for="shippingMethod-676444_0" class="radio__label">
+                                                            <span class="radio__label__primary">
+                                                                <span>Giao hàng tận nơi (COD)</span>
                                                             </span>
-                                                            <label for="shippingMethod-676444_0" class="radio__label">
-                                                                <span class="radio__label__primary">
-                                                                    <span>Giao hàng tận nơi (COD)</span>
+                                                            <span class="radio__label__accessory">
+                                                                <span class="content-box__emphasis price">
+                                                                    40.000₫
                                                                 </span>
-                                                                <span class="radio__label__accessory">
-                                                                    <span class="content-box__emphasis price">
-                                                                        40.000₫
-                                                                    </span>
-                                                                </span>
-                                                            </label>
-                                                        </div>
-                                                        <div>
-                                                            <span class="radio__input">
-                                                                <input type="radio" class="input-radio"
-                                                                    name="shippingMethod" id="shippingMethod-676444_0"
-                                                                    value="676444_0,40.000 VND"
-                                                                    data-bind="shippingMethod">
                                                             </span>
-                                                            <label for="shippingMethod-676444_0" class="radio__label">
-                                                                <span class="radio__label__primary">
-                                                                    <span>Đến cửa hàng</span>
-                                                                </span>
-                                                            </label>
-                                                        </div>
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <span class="radio__input">
+                                                            <input type="radio" class="input-radio"
+                                                                name="shippingMethod" id="shippingMethod-676444_0"
+                                                                value="676444_0,40.000 VND" data-bind="shippingMethod">
+                                                        </span>
+                                                        <label for="shippingMethod-676444_0" class="radio__label">
+                                                            <span class="radio__label__primary">
+                                                                <span>Đến cửa hàng</span>
+                                                            </span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </section>
-                                </div>
+                                    </div>
+                                </section>
                             </div>
                         </div>
+                    </div>
 
                 </div>
             </div>
@@ -297,8 +307,7 @@
                                         <span style="width: 50%; float: left;text-align: right; color: red;"
                                             id="price-total"><span>đ</span></span>
                                     </div>
-                                    <button onclick="location.href='/checkout'" type="button"
-                                        class="button btn btn-default cart__btn-proceed-checkout"
+                                    <button type="button" class="button btn btn-default cart__btn-proceed-checkout"
                                         id="btn-proceed-checkout" title="Thanh toán">Thanh
                                         toán</button>
                                 </div>
@@ -554,6 +563,46 @@
                     style="scale: 1.2;"></i>
             </a>
         </div>
+        <section class="popup--cart d-none" id="popup--cart__id">
+            <div class="popup--cart__header">
+                <div class="popup-cart-top">
+                    <span>
+                        Đơn hàng của bạn đã hoàn tất
+                    </span>
+                    <span>
+                        <a href="#" id="popOut">
+                            <svg style="width: 15px; height: 15px;" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="512" height="512" x="0"
+                                y="0" viewBox="0 0 365.696 365.696" style="enable-background:new 0 0 512 512"
+                                xml:space="preserve" class="">
+                                <g>
+                                    <path xmlns="http://www.w3.org/2000/svg"
+                                        d="m243.1875 182.859375 113.132812-113.132813c12.5-12.5 12.5-32.765624 0-45.246093l-15.082031-15.082031c-12.503906-12.503907-32.769531-12.503907-45.25 0l-113.128906 113.128906-113.132813-113.152344c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503907-12.5 32.769531 0 45.25l113.152344 113.152344-113.128906 113.128906c-12.503907 12.503907-12.503907 32.769531 0 45.25l15.082031 15.082031c12.5 12.5 32.765625 12.5 45.246093 0l113.132813-113.132812 113.128906 113.132812c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082031c12.5-12.503906 12.5-32.769531 0-45.25zm0 0"
+                                        fill="#ffffff" data-original="#000000" class=""></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </span>
+                </div>
+
+            </div>
+            <div class="popup--cart__container">
+                <div class="row justify-content-center m-2">
+                    <svg class="m-3" aria-hidden="true" focusable="false" width="150" height="100" data-prefix="fal"
+                        data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                        class="svg-inline--fa fa-check-circle fa-w-16">
+                        <path fill="currentColor"
+                            d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"
+                            class=""></path>
+                    </svg>
+                    Cảm ơn bạn đã lựa chọn HKT cosmetic
+
+                </div>
+            </div>
+        </section>
+
+        <div id="background--popup" class="popup--background"></div>
+        <script src="../JS/checkout.js"></script>
         <script src="../JS/countItems.js"></script>
         <script src="../JS/cart.js"></script>
         <script src="../JS/product.js"></script>

@@ -235,7 +235,7 @@ function updatePopup() {
                     let countInput = document.querySelector(`#count-${id}`);
                     countInput.value = item.quantity;
                     let updatePricePro = document.querySelector(`#price-${id}`);
-                    updatePricePro.innerHTML = parseInt(item.quantity * item.price) + ".000đ";
+                    updatePricePro.innerHTML = parseInt(item.quantity * item.price).toLocaleString() + ".000đ";
                 }
                 setItemInLocal("products", item)
             })
@@ -266,7 +266,7 @@ function updatePopup() {
                         let countInput = document.querySelector(`#count-${id}`);
                         countInput.value = item.quantity;
                         let updatePricePro = document.querySelector(`#price-${id}`);
-                        updatePricePro.innerHTML = parseInt(item.quantity * item.price) + ".000đ";
+                        updatePricePro.innerHTML = parseInt(item.quantity * item.price).toLocaleString() + ".000đ";
                         setItemInLocal("products", item);
                     }
                 }
