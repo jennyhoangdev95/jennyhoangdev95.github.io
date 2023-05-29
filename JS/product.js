@@ -175,7 +175,6 @@ function updatePopup() {
 
     let containerOrderList = document.getElementById("products--list");
     let arrayProducts = "";
-    let priceTotal = 0;
     let listID = [];
     products.forEach((item) => {
         if (listID.indexOf(item.id) === -1) {
@@ -191,7 +190,7 @@ function updatePopup() {
     <img style="width: 80px; height: 80px;" src="${element[0].srcImg}" alt="${element[0].title}">
         <div style="display: flex; flex-direction: column; justify-content: center; margin-left: 10px;">
         <a style="text-align: left;">${element[0].title}</a>
-        <p style="color: red; text-align: left; margin: 0;">xoá</p>
+        <a href="#" style="color: red; text-align: left; margin: 0;" class="removePro" data-id=${element[0].id}>xoá</a>
         </div>
     </div>
     <div style="text-align: center; width: 20%"><span>${element[0].price}đ</span></div>
@@ -212,12 +211,11 @@ function updatePopup() {
             </button>
         </div>
     </div>
-    <div style="text-align: center; width: 15%" id="price-${element[0].id}"><span>${(element[0].price)}</span></div>
+    <div style="text-align: center; width: 15%" id="price-${element[0].id}"><span>${(element[0].price)}đ</span></div>
     </div>
     </div>
 `
         arrayProducts += html2
-        priceTotal += parseFloat(element[0].price) * element.length;
     });
 
     containerOrderList.innerHTML = arrayProducts;
@@ -238,12 +236,17 @@ function updatePopup() {
                     countInput.value = item.quantity;
                     let updatePricePro = document.querySelector(`#price-${id}`);
                     updatePricePro.innerHTML = parseInt(item.quantity * item.price) + ".000đ";
-                    console.log(updatePricePro)
-                    console.log(item.price);
-
                 }
                 setItemInLocal("products", item)
             })
+            // sau khi cập nhật số lượng sản phẩm, gọi lại hàm tính tổng giá tiền và cập nhập nhật giá trị lên giao diện
+            let containerPriceTotal = document.getElementById("price-total");
+            let priceTotal = calculateTotalPrice();
+            if (priceTotal < 1000) {
+                containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ";
+            } else {
+                containerPriceTotal.innerHTML = (priceTotal / 1000).toLocaleString() + "0.000đ";
+            }
         });
     });
 
@@ -252,24 +255,59 @@ function updatePopup() {
         btn.addEventListener('click', (event) => {
             let id = event.target.closest('.btn-amountPro').dataset.id;
             localStorage.removeItem('products')
-            products.forEach((item) => {
+            products.forEach((item, index) => {
                 if (item.id === Number(id)) {
-                    item.quantity = item.quantity - 1
-                    let countInput = document.querySelector(`#count-${id}`);
-                    countInput.value = item.quantity;
+                    item.quantity = item.quantity - 1;
+                    if (item.quantity === 0) {
+                        products.splice(index, 1);
+                        localStorage.setItem('products', JSON.stringify(products));
+                        updatePopup();
+                    } else {
+                        let countInput = document.querySelector(`#count-${id}`);
+                        countInput.value = item.quantity;
+                        let updatePricePro = document.querySelector(`#price-${id}`);
+                        updatePricePro.innerHTML = parseInt(item.quantity * item.price) + ".000đ";
+                        setItemInLocal("products", item);
+                    }
                 }
-                if (item.quantity > 0) {
-                    setItemInLocal("products", item)
-                } else {
-
-                }
-            })
+            });
+            // sau khi cập nhật số lượng sản phẩm, gọi lại hàm tính tổng giá tiền và cập nhập nhật giá trị lên giao diện
+            let containerPriceTotal = document.getElementById("price-total");
+            let priceTotal = calculateTotalPrice();
+            if (priceTotal < 1000) {
+                containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ";
+            } else {
+                containerPriceTotal.innerHTML = (priceTotal / 1000).toLocaleString() + "0.000đ";
+            }
+        });
+    });
+    let removeProBtns = document.querySelectorAll('.removePro');
+    removeProBtns.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            let idToRemove = event.target.dataset.id;
+            console.log(idToRemove);
+            let productsInCart = JSON.parse(localStorage.getItem('products')) || [];
+            let updatedCart = productsInCart.filter(product => product.id !== Number(idToRemove));
+            localStorage.setItem('products', JSON.stringify(updatedCart));
+            updatePopup();
         });
     });
 
     let containerPriceTotal = document.getElementById("price-total")
+    let priceTotal = calculateTotalPrice();
+    function calculateTotalPrice() {
+        const products = JSON.parse(localStorage.getItem('products')) || [];
+        let totalPrice = 0;
+        for (let i = 0; i < products.length; i++) {
+            let product = products[i];
+            let productPrice = product.price * product.quantity;
+            totalPrice += productPrice;
+        }
+        return totalPrice;
+    }
     if (priceTotal < 1000) {
         containerPriceTotal.innerHTML = priceTotal.toLocaleString() + ".000đ"
+
     } else {
         containerPriceTotal.innerHTML = (priceTotal / 1000).toLocaleString() + "0.000đ"
     }

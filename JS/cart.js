@@ -59,7 +59,7 @@ if (products.length === 0) {
             </button>
         </div>
     </div>
-    <div style="text-align: center; width: 15%"><span>${parseFloat(element[0].price) * element.length}.000đ</span></div>
+    <div style="text-align: center; width: 15%" id="price-${element[0].id}"><span>${(element[0].price)}đ</span></div>
     </div>
     </div>
 `
@@ -76,32 +76,49 @@ if (products.length === 0) {
     }
 }
 
-let btnsAddOne = document.querySelectorAll(".addOne")
-// let btnsRemoveOne = document.querySelectorAll(".removeOne")
+let plusBtns = document.querySelectorAll('.addOne');
+let minusBtns = document.querySelectorAll('.removeOne');
 
-for (let i = 0; i < btnsAddOne.length; i++) {
-    let btn = btnsAddOne[i];
-    btn.addEventListener("click", addOne);
-}
 
-// for (let i = 0; i < btnsRemoveOne.length; i++) {
-//     let btn = btnsRemoveOne[i];
-//     btn.addEventListener("click", reoveOne);
-// }
+plusBtns.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        let id = event.target.closest('.btn-amountPro').dataset.id;
+        console.log(id)
+        localStorage.removeItem('products')
+        products.forEach((item) => {
+            if (item.id === Number(id)) {
+                item.quantity = item.quantity + 1
+                let countInput = document.querySelector(`#count-${id}`);
+                countInput.value = item.quantity;
+                let updatePricePro = document.querySelector(`#price-${id}`);
+                updatePricePro.innerHTML = parseInt(item.quantity * item.price) + ".000đ";
+                console.log(updatePricePro)
+                console.log(item.price);
 
-function addOne(event) {
-    console.log("test")
-    let id = event.target.dataset.id
-    let items = products.filter((item) => item.id === id)
-    products.push(items[0])
-    setItemInLocal("products", products)
-}
+            }
+            setItemInLocal("products", item)
+        })
+    });
+});
 
-// function reoveOne(event) {
-    //     let id = event.target.dataset.id
-    //     let items = products.filter((item) => item.id === id)
-    //     products.pop()
-    //     setItemInLocal("products", products)
-    //     let total = document.getElementById(`count-${id}`)
-    //     total.innerHTML = items.length - 1
-    // }
+
+minusBtns.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        let id = event.target.closest('.btn-amountPro').dataset.id;
+        localStorage.removeItem('products')
+        products.forEach((item) => {
+            if (item.id === Number(id)) {
+                item.quantity = item.quantity - 1
+                let countInput = document.querySelector(`#count-${id}`);
+                countInput.value = item.quantity;
+                let updatePricePro = document.querySelector(`#price-${id}`);
+                updatePricePro.innerHTML = parseInt(item.quantity * item.price) + ".000đ";
+            }
+            if (item.quantity > 0) {
+                setItemInLocal("products", item)
+            } else {
+
+            }
+        })
+    });
+});

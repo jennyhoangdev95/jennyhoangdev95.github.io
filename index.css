@@ -9,6 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -272,7 +273,7 @@ header {
 
 .sale-card {
     display: flex;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .sale__card-slider {
